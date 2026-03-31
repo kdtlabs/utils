@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { ensureSuffix } from '@/strings/manipulations'
+import { ensureSuffix } from '../../../src/strings/manipulations'
 
 describe('ensureSuffix', () => {
     it('adds suffix when not present', () => {

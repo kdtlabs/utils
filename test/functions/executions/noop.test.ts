@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { noop } from '@/functions/executions'
+import { noop } from '../../../src/functions/executions'
 
 describe('noop', () => {
     it('returns undefined', () => {

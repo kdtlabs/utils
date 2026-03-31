@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { capitalize } from '@/strings/manipulations'
+import { capitalize } from '../../../src/strings/manipulations'
 
 describe('capitalize', () => {
     it('capitalizes first character', () => {

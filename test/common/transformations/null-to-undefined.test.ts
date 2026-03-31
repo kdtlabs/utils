@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { nullToUndefined } from '@/common/transformations'
+import { nullToUndefined } from '../../../src/common/transformations'
 
 describe('nullToUndefined', () => {
     it('converts null to undefined', () => {
@@ -39,11 +39,11 @@ describe('nullToUndefined', () => {
     })
 
     it('converts null values in arrays nested inside objects', () => {
-        const input = { tags: [null, 'a'], meta: { items: [null, 1] } }
+        const input = { meta: { items: [null, 1] }, tags: [null, 'a'] }
 
         expect(nullToUndefined(input)).toEqual({
-            tags: [undefined, 'a'],
             meta: { items: [undefined, 1] },
+            tags: [undefined, 'a'],
         })
     })
 
@@ -64,7 +64,7 @@ describe('nullToUndefined', () => {
     it('does not recurse into non-plain objects', () => {
         const date = new Date('2024-01-01')
         const map = new Map([['key', null]])
-        const set = new Set([null, 1])
+        const set = new Set([1, null])
 
         expect(nullToUndefined(date)).toBe(date)
         expect(nullToUndefined(map)).toBe(map)

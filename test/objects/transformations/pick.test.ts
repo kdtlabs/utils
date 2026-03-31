@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { pick } from '@/objects/transformations'
+import { pick } from '../../../src/objects/transformations'
 
 describe('pick', () => {
     it('picks a single key', () => {

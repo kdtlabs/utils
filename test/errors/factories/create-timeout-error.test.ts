@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createTimeoutError } from '@/errors/factories'
+import { createTimeoutError } from '../../../src/errors/factories'
 
 describe('createTimeoutError', () => {
     it('creates a DOMException with default timeout message', () => {

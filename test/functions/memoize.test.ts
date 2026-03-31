@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { memoize } from '@/functions/memoize'
+import { memoize } from '../../src/functions/memoize'
 
 describe('memoize', () => {
     it('returns the same result for the same first argument', () => {

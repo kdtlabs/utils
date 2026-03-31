@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isNumberString } from '@/numbers/guards'
+import { isNumberString } from '../../../src/numbers/guards'
 
 describe('isNumberString', () => {
     it('returns true for an integer string', () => {

@@ -1,4 +1,4 @@
-import { transform } from '@/functions'
+import { transform } from '../functions'
 
 export const sum = (array: number[]) => array.reduce((a, b) => a + b, 0)
 

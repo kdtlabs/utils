@@ -1,5 +1,5 @@
-import { combineSignals, createAbortController, type Errorable } from '@/errors'
-import { transform } from '@/functions'
+import { combineSignals, createAbortController, type Errorable } from '../errors'
+import { transform } from '../functions'
 import { abortable } from './abortable'
 
 export interface TimerOptions {

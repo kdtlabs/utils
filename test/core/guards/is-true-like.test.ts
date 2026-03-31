@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isTrueLike } from '@/core/guards'
+import { isTrueLike } from '../../../src/core/guards'
 
 describe('isTrueLike', () => {
     it('returns true for true', () => {

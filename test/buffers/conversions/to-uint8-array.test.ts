@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { toUint8Array } from '@/buffers/conversions'
+import { toUint8Array } from '../../../src/buffers/conversions'
 
 describe('toUint8Array', () => {
     describe('Uint8Array input', () => {

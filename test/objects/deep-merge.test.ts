@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { deepMerge } from '@/objects/deep-merge'
+import { deepMerge } from '../../src/objects/deep-merge'
 
 describe('deepMerge', () => {
     it('merges flat objects', () => {

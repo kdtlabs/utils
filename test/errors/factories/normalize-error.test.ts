@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { normalizeError } from '@/errors/factories'
+import { normalizeError } from '../../../src/errors/factories'
 
 describe('normalizeError', () => {
     it('returns Error instance as-is', () => {

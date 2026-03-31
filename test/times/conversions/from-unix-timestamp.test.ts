@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { fromUnixTimestamp } from '@/times/conversions'
+import { fromUnixTimestamp } from '../../../src/times/conversions'
 
 describe('fromUnixTimestamp', () => {
     test('converts 0 to epoch', () => {

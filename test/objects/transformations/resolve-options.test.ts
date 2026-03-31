@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { resolveOptions } from '@/objects/transformations'
+import { resolveOptions } from '../../../src/objects/transformations'
 
 describe('resolveOptions', () => {
     const defaultValue = { color: 'red', indent: 4 }

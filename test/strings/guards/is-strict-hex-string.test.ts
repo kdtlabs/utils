@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isStrictHexString } from '@/strings/guards'
+import { isStrictHexString } from '../../../src/strings/guards'
 
 describe('isStrictHexString', () => {
     it('returns true for valid hex with 0x prefix', () => {

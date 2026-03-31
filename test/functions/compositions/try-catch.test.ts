@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { tryCatch } from '@/functions/compositions'
+import { tryCatch } from '../../../src/functions/compositions'
 
 describe('tryCatch', () => {
     it('returns fn result when no error', () => {

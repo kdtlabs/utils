@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { diff } from '@/arrays/set-operations'
+import { diff } from '../../../src/arrays/set-operations'
 
 describe('diff', () => {
     it('returns elements in first array not in second', () => {

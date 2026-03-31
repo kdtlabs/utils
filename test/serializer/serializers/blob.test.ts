@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { serializeBlob } from '@/serializer/serializers/blob'
+import { serializeBlob } from '../../../src/serializer/serializers/blob'
 import { createTestContext } from '../helpers'
 
 describe('serializeBlob', () => {

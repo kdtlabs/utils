@@ -1,7 +1,7 @@
-import type { Jsonable } from '@/core/types'
+import type { Jsonable } from '../../../src/core/types'
 import { describe, expect, it } from 'bun:test'
-import { OMIT_SENTINEL } from '@/serializer/constants'
-import { serializeArray, serializeArrayEntry, serializeIterableEntries } from '@/serializer/serializers/array'
+import { OMIT_SENTINEL } from '../../../src/serializer/constants'
+import { serializeArray, serializeArrayEntry, serializeIterableEntries } from '../../../src/serializer/serializers/array'
 import { createTestContext, identitySerialize } from '../helpers'
 
 describe('serializeArray', () => {

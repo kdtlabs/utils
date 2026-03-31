@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { bufferToString } from '@/buffers/conversions'
+import { bufferToString } from '../../../src/buffers/conversions'
 
 describe('bufferToString', () => {
     const TEXT = 'hello world'

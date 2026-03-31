@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { ltrim } from '@/strings/manipulations'
+import { ltrim } from '../../../src/strings/manipulations'
 
 describe('ltrim', () => {
     it('trims leading whitespace by default', () => {

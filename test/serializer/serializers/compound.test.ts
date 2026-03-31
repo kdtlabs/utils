@@ -1,8 +1,8 @@
-import type { Jsonable } from '@/core/types'
-import type { SerializedValue } from '@/serializer/types'
+import type { Jsonable } from '../../../src/core/types'
+import type { SerializedValue } from '../../../src/serializer/types'
 import { describe, expect, it } from 'bun:test'
-import { SERIALIZE } from '@/serializer/constants'
-import { serializeCompound } from '@/serializer/serializers/compound'
+import { SERIALIZE } from '../../../src/serializer/constants'
+import { serializeCompound } from '../../../src/serializer/serializers/compound'
 import { createTestContext, identitySerialize } from '../helpers'
 
 describe('serializeCompound', () => {

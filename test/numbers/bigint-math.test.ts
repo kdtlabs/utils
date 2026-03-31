@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { BigIntMath } from '@/numbers/bigint-math'
+import { BigIntMath } from '../../src/numbers/bigint-math'
 
 describe('BigIntMath', () => {
     describe('isEven', () => {

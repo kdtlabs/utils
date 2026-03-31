@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { poll } from '@/promises/poll'
+import { poll } from '../../src/promises/poll'
 
 describe('poll', () => {
     describe('argument overloads', () => {

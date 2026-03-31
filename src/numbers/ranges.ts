@@ -1,4 +1,4 @@
-import { notNullish } from '@/core'
+import { notNullish } from '../core'
 
 export function isValidRange<T extends bigint | number>(start: T, end: T, inclusive = true, min?: T, max?: T) {
     if (notNullish(min) && start < min) {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { range } from '@/arrays/factories'
+import { range } from '../../../src/arrays/factories'
 
 describe('range', () => {
     it('creates range from 0 to 4', () => {

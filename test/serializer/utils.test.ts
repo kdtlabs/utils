@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
-import { OMIT_SENTINEL } from '@/serializer/constants'
-import { handleError } from '@/serializer/utils'
+import { OMIT_SENTINEL } from '../../src/serializer/constants'
+import { handleError } from '../../src/serializer/utils'
 import { createTestContext } from './helpers'
 
 describe('handleError', () => {

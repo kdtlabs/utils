@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { intersection } from '@/arrays/set-operations'
+import { intersection } from '../../../src/arrays/set-operations'
 
 describe('intersection', () => {
     it('returns common elements', () => {

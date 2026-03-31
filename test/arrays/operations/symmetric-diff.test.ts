@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { symmetricDiff } from '@/arrays/set-operations'
+import { symmetricDiff } from '../../../src/arrays/set-operations'
 
 describe('symmetricDiff', () => {
     it('returns elements in either array but not both', () => {

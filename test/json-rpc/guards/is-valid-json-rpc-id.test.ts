@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isValidJsonRpcId } from '@/json-rpc/guards'
+import { isValidJsonRpcId } from '../../../src/json-rpc/guards'
 
 describe('isValidJsonRpcId', () => {
     it('returns true for a string', () => {

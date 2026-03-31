@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { toOrdinal } from '@/numbers/conversions'
+import { toOrdinal } from '../../../src/numbers/conversions'
 
 describe('toOrdinal', () => {
     it('returns 1st for 1', () => {

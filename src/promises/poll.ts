@@ -1,8 +1,8 @@
 import type { Awaitable } from './types'
-import { assertParam } from '@/common'
-import { createAbortController, isAbortError } from '@/errors'
-import { isFunction } from '@/functions'
-import { isPlainObject } from '@/objects'
+import { assertParam } from '../common'
+import { createAbortController, isAbortError } from '../errors'
+import { isFunction } from '../functions'
+import { isPlainObject } from '../objects'
 import { abortable } from './abortable'
 import { sleep } from './timers'
 

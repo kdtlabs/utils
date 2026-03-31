@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isKeysOf } from '@/objects/guards'
+import { isKeysOf } from '../../../src/objects/guards'
 
 describe('isKeysOf', () => {
     it('returns true when all keys are present', () => {

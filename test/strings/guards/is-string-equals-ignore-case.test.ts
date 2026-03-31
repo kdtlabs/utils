@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isStringEqualsIgnoreCase } from '@/strings/guards'
+import { isStringEqualsIgnoreCase } from '../../../src/strings/guards'
 
 describe('isStringEqualsIgnoreCase', () => {
     it('returns true when all others match ignoring case', () => {

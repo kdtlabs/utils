@@ -1,6 +1,6 @@
-import type { JsonRpcMessage } from '@/json-rpc/types'
+import type { JsonRpcMessage } from '../../../src/json-rpc/types'
 import { describe, expect, it } from 'bun:test'
-import { isJsonRpcRequestMessage } from '@/json-rpc/guards'
+import { isJsonRpcRequestMessage } from '../../../src/json-rpc/guards'
 
 describe('isJsonRpcRequestMessage', () => {
     it('returns true for a valid request with string id', () => {

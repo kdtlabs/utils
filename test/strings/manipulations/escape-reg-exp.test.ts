@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { escapeRegExp } from '@/strings/manipulations'
+import { escapeRegExp } from '../../../src/strings/manipulations'
 
 describe('escapeRegExp', () => {
     it('escapes special regex characters', () => {

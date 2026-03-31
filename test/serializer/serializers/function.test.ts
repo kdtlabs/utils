@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { serializeFunction } from '@/serializer/serializers/function'
+import { serializeFunction } from '../../../src/serializer/serializers/function'
 import { createTestContext } from '../helpers'
 
 async function asyncFn() {}

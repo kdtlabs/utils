@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isHexString } from '@/strings/guards'
+import { isHexString } from '../../../src/strings/guards'
 
 describe('isHexString', () => {
     it('returns true for lowercase hex without prefix', () => {

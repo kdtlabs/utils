@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { pathToString } from '@/system/path'
+import { pathToString } from '../../../src/system/path'
 
 describe('pathToString', () => {
     it('returns a string path as-is', () => {

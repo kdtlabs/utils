@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { BaseError } from '@/errors/base-error'
+import { BaseError } from '../../src/errors/base-error'
 
 class HttpError extends BaseError {
     public constructor(message: string, options?: ConstructorParameters<typeof BaseError>[1]) {

@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'bun:test'
-import { FifoMap } from '@/collections/fifo-map'
-import { FifoSet } from '@/collections/fifo-set'
-import { isEmptyCollection } from '@/collections/guards'
-import { LruMap } from '@/collections/lru-map'
-import { LruSet } from '@/collections/lru-set'
+import { FifoMap } from '../../../src/collections/fifo-map'
+import { FifoSet } from '../../../src/collections/fifo-set'
+import { isEmptyCollection } from '../../../src/collections/guards'
+import { LruMap } from '../../../src/collections/lru-map'
+import { LruSet } from '../../../src/collections/lru-set'
 
 describe('isEmptyCollection', () => {
     it('returns true for an empty Set', () => {

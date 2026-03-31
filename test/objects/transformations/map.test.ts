@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { map } from '@/objects/transformations'
+import { map } from '../../../src/objects/transformations'
 
 describe('map', () => {
     it('transforms both keys and values', () => {

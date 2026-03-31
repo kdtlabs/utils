@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createJsonRpcErrorObject } from '@/json-rpc/factories'
+import { createJsonRpcErrorObject } from '../../../src/json-rpc/factories'
 
 describe('createJsonRpcErrorObject', () => {
     it('creates an error object without data', () => {

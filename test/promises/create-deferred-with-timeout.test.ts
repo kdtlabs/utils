@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createDeferredWithTimeout } from '@/promises'
+import { createDeferredWithTimeout } from '../../src/promises'
 
 describe('createDeferredWithTimeout', () => {
     describe('timeout rejection', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isPrimitive } from '@/core/guards'
+import { isPrimitive } from '../../../src/core/guards'
 
 describe('isPrimitive', () => {
     it('returns true for null', () => {

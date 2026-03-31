@@ -1,5 +1,5 @@
 import type { Awaitable } from './types'
-import { isNonEmptyArray } from '@/arrays'
+import { isNonEmptyArray } from '../arrays'
 
 export async function pPipe(): Promise<void>
 export async function pPipe<T>(fn: () => Awaitable<T>): Promise<T>

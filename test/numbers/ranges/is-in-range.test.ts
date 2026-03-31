@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isInRange } from '@/numbers/ranges'
+import { isInRange } from '../../../src/numbers/ranges'
 
 describe('isInRange', () => {
     it('returns true when value is within inclusive range', () => {

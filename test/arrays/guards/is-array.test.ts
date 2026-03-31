@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isArray } from '@/arrays/guards'
+import { isArray } from '../../../src/arrays/guards'
 
 describe('isArray', () => {
     it('returns true for arrays', () => {

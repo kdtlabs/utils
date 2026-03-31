@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { LruMap } from '@/collections/lru-map'
+import { LruMap } from '../../src/collections/lru-map'
 
 describe('LruMap', () => {
     describe('construction', () => {

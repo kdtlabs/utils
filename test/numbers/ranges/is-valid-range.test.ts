@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isValidRange } from '@/numbers/ranges'
+import { isValidRange } from '../../../src/numbers/ranges'
 
 describe('isValidRange', () => {
     it('returns true for a valid inclusive range', () => {

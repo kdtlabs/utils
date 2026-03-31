@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createAbortError } from '@/errors/factories'
+import { createAbortError } from '../../../src/errors/factories'
 
 describe('createAbortError', () => {
     it('creates a DOMException with default message and name', () => {

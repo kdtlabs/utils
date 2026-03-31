@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { padZeroStart } from '@/strings/manipulations'
+import { padZeroStart } from '../../../src/strings/manipulations'
 
 describe('padZeroStart', () => {
     it('pads number with leading zeros', () => {

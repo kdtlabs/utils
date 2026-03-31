@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isString } from '@/core/guards'
+import { isString } from '../../../src/core/guards'
 
 describe('isString', () => {
     it('returns true for a string', () => {

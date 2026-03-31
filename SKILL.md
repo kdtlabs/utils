@@ -14,23 +14,21 @@ A comprehensive TypeScript utility library. Before writing any utility function,
 ## Import
 
 ```ts
-// Barrel import (all utils)
 import { unique, debounce, deepMerge } from '@kdtlabs/utils'
-
-// Per-module import (tree-shakeable)
-import { unique } from '@kdtlabs/utils/arrays'
-import { debounce } from '@kdtlabs/utils/functions'
-import { deepMerge } from '@kdtlabs/utils/objects'
 ```
 
 ## When you need function details
 
-For full type signatures, overloads, and options interfaces, read the `.d.ts` files directly:
+For full type signatures, overloads, and options interfaces, read the source code directly. Each module has its own folder under `src/`:
 
 ```text
-node_modules/@kdtlabs/utils/<module>/index.d.ts
-node_modules/@kdtlabs/utils/<module>/<file>.d.ts
+node_modules/@kdtlabs/utils/src/arrays/
+node_modules/@kdtlabs/utils/src/objects/
+node_modules/@kdtlabs/utils/src/strings/
+...etc
 ```
+
+Each folder contains an `index.ts` barrel that re-exports everything from the module. Read it to discover available files, then read individual files for implementation details.
 
 ## Arrays
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { flatten } from '@/arrays/operations'
+import { flatten } from '../../../src/arrays/operations'
 
 describe('flatten', () => {
     it('flattens nested arrays one level', () => {

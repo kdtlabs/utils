@@ -1,5 +1,5 @@
-import { isFunction } from '@/functions'
-import { isObject } from '@/objects'
+import { isFunction } from '../functions'
+import { isObject } from '../objects'
 
 export const isPromiseLike = <T>(value: unknown): value is PromiseLike<T> => isObject(value) && isFunction(value.then)
 

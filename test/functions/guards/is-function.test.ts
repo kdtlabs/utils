@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isFunction } from '@/functions/guards'
+import { isFunction } from '../../../src/functions/guards'
 
 describe('isFunction', () => {
     it('returns true for arrow function', () => {

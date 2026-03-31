@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isPercentage } from '@/numbers/guards'
+import { isPercentage } from '../../../src/numbers/guards'
 
 describe('isPercentage', () => {
     it('returns true for 0', () => {

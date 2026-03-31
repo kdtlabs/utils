@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isSpecialNumberString } from '@/numbers/guards'
+import { isSpecialNumberString } from '../../../src/numbers/guards'
 
 describe('isSpecialNumberString', () => {
     it('returns true for Infinity', () => {

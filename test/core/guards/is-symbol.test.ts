@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isSymbol } from '@/core/guards'
+import { isSymbol } from '../../../src/core/guards'
 
 describe('isSymbol', () => {
     it('returns true for a symbol', () => {

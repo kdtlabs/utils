@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { partition } from '@/arrays/operations'
+import { partition } from '../../../src/arrays/operations'
 
 describe('partition', () => {
     it('splits array by predicate', () => {

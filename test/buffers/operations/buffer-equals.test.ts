@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { bufferEquals } from '@/buffers/operations'
+import { bufferEquals } from '../../../src/buffers/operations'
 
 describe('bufferEquals', () => {
     describe('equal buffers', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createJsonRpcRequestMessage } from '@/json-rpc/factories'
+import { createJsonRpcRequestMessage } from '../../../src/json-rpc/factories'
 
 describe('createJsonRpcRequestMessage', () => {
     it('creates a request message with numeric id and no params', () => {

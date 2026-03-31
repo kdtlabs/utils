@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isIterable } from '@/collections/guards'
+import { isIterable } from '../../../src/collections/guards'
 
 function * gen() {
     yield 1

@@ -1,4 +1,4 @@
-import { isUndefined } from '@/core'
+import { isUndefined } from '../core'
 
 export const isInMode = (key: string) => process.env.NODE_ENV === key
 

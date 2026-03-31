@@ -1,6 +1,6 @@
-import type { AnyObject } from '@/objects/types'
+import type { AnyObject } from '../../src/objects/types'
 import { bench, do_not_optimize, run, summary } from 'mitata'
-import { deepMerge } from '@/objects/deep-merge'
+import { deepMerge } from '../../src/objects/deep-merge'
 
 interface MergePair {
     base: AnyObject

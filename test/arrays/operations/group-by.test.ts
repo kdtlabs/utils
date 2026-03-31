@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { groupBy } from '@/arrays/operations'
+import { groupBy } from '../../../src/arrays/operations'
 
 describe('groupBy', () => {
     it('groups items by key function', () => {

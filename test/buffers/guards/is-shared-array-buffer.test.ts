@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isSharedArrayBuffer } from '@/buffers/guards'
+import { isSharedArrayBuffer } from '../../../src/buffers/guards'
 
 describe('isSharedArrayBuffer', () => {
     it('returns true for a SharedArrayBuffer', () => {

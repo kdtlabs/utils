@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { isValidDate } from '@/times/guards'
+import { isValidDate } from '../../../src/times/guards'
 
 describe('isValidDate', () => {
     test('returns true for a valid Date', () => {

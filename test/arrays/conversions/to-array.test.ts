@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { toArray } from '@/arrays/conversions'
+import { toArray } from '../../../src/arrays/conversions'
 
 function * gen() {
     yield 1

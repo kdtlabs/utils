@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isJsonablePrimitive } from '@/core/guards'
+import { isJsonablePrimitive } from '../../../src/core/guards'
 
 describe('isJsonablePrimitive', () => {
     it('returns true for null', () => {

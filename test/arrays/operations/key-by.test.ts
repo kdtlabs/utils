@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { keyBy } from '@/arrays/operations'
+import { keyBy } from '../../../src/arrays/operations'
 
 describe('keyBy', () => {
     it('creates lookup by key function', () => {

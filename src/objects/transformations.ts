@@ -1,5 +1,5 @@
 import type { AnyObject, FilterPredicate } from './types'
-import { isNullish, type Nullish } from '@/core'
+import { isNullish, type Nullish } from '../core'
 
 export const entries = <O extends AnyObject>(obj: O) => Object.entries(obj) as Array<[keyof O, O[keyof O]]>
 

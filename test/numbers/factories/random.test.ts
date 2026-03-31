@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { random } from '@/numbers/factories'
+import { random } from '../../../src/numbers/factories'
 
 describe('random', () => {
     it('returns a value within the specified range', () => {

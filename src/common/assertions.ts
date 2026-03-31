@@ -1,4 +1,4 @@
-import { ensureError, type Errorable, type ErrorCtor } from '@/errors'
+import { ensureError, type Errorable, type ErrorCtor } from '../errors'
 
 export function assert(condition: unknown, message: Errorable, ctor?: ErrorCtor): asserts condition {
     if (!condition) {

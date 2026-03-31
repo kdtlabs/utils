@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
-import * as promises from '@/promises'
-import { pTap, tryCatchAsync } from '@/promises/compositions'
+import * as promises from '../../src/promises'
+import { pTap, tryCatchAsync } from '../../src/promises/compositions'
 
 describe('promises index exports', () => {
     it('re-exports pTap from the promises barrel', () => {

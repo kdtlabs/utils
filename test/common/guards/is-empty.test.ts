@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isEmpty } from '@/common/guards'
+import { isEmpty } from '../../../src/common/guards'
 
 describe('isEmpty', () => {
     it('returns true for null', () => {

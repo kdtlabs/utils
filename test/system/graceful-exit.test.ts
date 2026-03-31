@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from 'bun:test'
-import { addExitHandler, gracefulExit, isExiting } from '@/system/graceful-exit'
+import { addExitHandler, gracefulExit, isExiting } from '../../src/system/graceful-exit'
 
 const exitCodes: number[] = []
 const originalExit = process.exit
@@ -13,10 +13,10 @@ afterAll(() => {
 })
 
 function freshModule() {
-    const modulePath = require.resolve('@/system/graceful-exit')
+    const modulePath = require.resolve('../../src/system/graceful-exit')
     delete require.cache[modulePath]
 
-    return import('@/system/graceful-exit')
+    return import('../../src/system/graceful-exit')
 }
 
 describe('graceful-exit', () => {

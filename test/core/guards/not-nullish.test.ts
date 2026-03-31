@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { notNullish } from '@/core/guards'
+import { notNullish } from '../../../src/core/guards'
 
 describe('notNullish', () => {
     it('returns false for null', () => {

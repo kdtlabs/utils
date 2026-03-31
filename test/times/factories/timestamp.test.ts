@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { timestamp } from '@/times/factories'
+import { timestamp } from '../../../src/times/factories'
 
 describe('timestamp', () => {
     test('returns a number', () => {

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
-import { fetch } from '@/system/fetch'
+import { fetch } from '../../src/system/fetch'
 
 const createMockFetch = (handler: (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>) => (
     handler as typeof globalThis.fetch

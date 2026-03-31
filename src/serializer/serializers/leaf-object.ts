@@ -1,5 +1,5 @@
+import type { Jsonable } from '../../core'
 import type { SerializeContext } from '../types'
-import type { Jsonable } from '@/core'
 
 export function serializeLeafObject(value: unknown, ctx: SerializeContext): Jsonable | undefined {
     if (value instanceof Date) {

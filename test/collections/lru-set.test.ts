@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { LruSet } from '@/collections/lru-set'
+import { LruSet } from '../../src/collections/lru-set'
 
 describe('LruSet', () => {
     describe('construction', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { assertParam } from '@/common/assertions'
+import { assertParam } from '../../../src/common/assertions'
 
 describe('assertParam', () => {
     it('does not throw for truthy values', () => {

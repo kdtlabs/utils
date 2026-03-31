@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { abortable } from '@/promises'
+import { abortable } from '../../src/promises'
 
 describe('abortable', () => {
     it('returns the original promise when no signal is provided', async () => {

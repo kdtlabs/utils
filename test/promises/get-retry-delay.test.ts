@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { getRetryDelay } from '@/promises/retry'
+import { getRetryDelay } from '../../src/promises/retry'
 
 describe('getRetryDelay', () => {
     it('returns base delay on first attempt with defaults', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createDeferred } from '@/promises'
+import { createDeferred } from '../../src/promises'
 
 describe('createDeferred', () => {
     describe('initial state', () => {

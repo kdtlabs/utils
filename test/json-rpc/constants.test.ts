@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { JSON_RPC_ERROR_MESSAGES, JsonRpcErrorCode } from '@/json-rpc/constants'
+import { JSON_RPC_ERROR_MESSAGES, JsonRpcErrorCode } from '../../src/json-rpc/constants'
 
 describe('JsonRpcErrorCode', () => {
     it('ParseError is -32700', () => {

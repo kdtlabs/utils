@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { FifoSet } from '@/collections/fifo-set'
+import { FifoSet } from '../../src/collections/fifo-set'
 
 describe('FifoSet', () => {
     describe('construction', () => {

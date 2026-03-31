@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { Emitter } from '@/events/emitter'
+import { Emitter } from '../../src/events/emitter'
 
 describe('Emitter', () => {
     describe('on', () => {

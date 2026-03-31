@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { omit } from '@/objects/transformations'
+import { omit } from '../../../src/objects/transformations'
 
 describe('omit', () => {
     it('omits a single key', () => {

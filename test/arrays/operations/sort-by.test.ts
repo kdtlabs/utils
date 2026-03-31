@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { sortBy } from '@/arrays/operations'
+import { sortBy } from '../../../src/arrays/operations'
 
 describe('sortBy', () => {
     it('sorts by a single key ascending', () => {

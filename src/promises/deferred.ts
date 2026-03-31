@@ -1,4 +1,4 @@
-import { combineSignals, createAbortController, createAbortError, type Errorable } from '@/errors'
+import { combineSignals, createAbortController, createAbortError, type Errorable } from '../errors'
 
 export interface DeferredPromiseOptions<T> {
     onCallbackError?: (error: unknown) => void

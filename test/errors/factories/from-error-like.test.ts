@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { fromErrorLike } from '@/errors/factories'
+import { fromErrorLike } from '../../../src/errors/factories'
 
 describe('fromErrorLike', () => {
     it('creates Error from ErrorLike object', () => {

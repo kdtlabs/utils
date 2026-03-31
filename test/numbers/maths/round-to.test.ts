@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { roundTo } from '@/numbers/maths'
+import { roundTo } from '../../../src/numbers/maths'
 
 describe('roundTo', () => {
     it('rounds to 1 decimal place', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { serializeLeafObject } from '@/serializer/serializers/leaf-object'
+import { serializeLeafObject } from '../../../src/serializer/serializers/leaf-object'
 import { createTestContext } from '../helpers'
 
 describe('serializeLeafObject', () => {

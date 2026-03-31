@@ -1,6 +1,6 @@
-import { isString } from '@/core'
-import { BigIntMath, isSpecialNumberString, type Numberish } from '@/numbers'
-import { padZeroStart } from '@/strings'
+import { isString } from '../core'
+import { BigIntMath, isSpecialNumberString, type Numberish } from '../numbers'
+import { padZeroStart } from '../strings'
 
 export const toUnixTimestamp = (date: Date) => Math.floor(date.getTime() / 1000)
 

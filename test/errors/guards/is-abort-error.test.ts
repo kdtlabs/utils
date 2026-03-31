@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isAbortError } from '@/errors/guards'
+import { isAbortError } from '../../../src/errors/guards'
 
 describe('isAbortError', () => {
     it('returns true for AbortError DOMException', () => {

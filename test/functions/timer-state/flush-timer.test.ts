@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, jest } from 'bun:test'
-import { createTimerState, flushTimer } from '@/functions/timer-state'
+import { createTimerState, flushTimer } from '../../../src/functions/timer-state'
 
 beforeEach(() => {
     jest.useFakeTimers()

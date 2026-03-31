@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { humanizeSeconds } from '@/times/conversions'
+import { humanizeSeconds } from '../../../src/times/conversions'
 
 describe('humanizeSeconds', () => {
     test('returns "0ns" for zero', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { avg } from '@/numbers/maths'
+import { avg } from '../../../src/numbers/maths'
 
 describe('avg', () => {
     it('calculates the average', () => {

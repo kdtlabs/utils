@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { shuffle } from '@/arrays/operations'
+import { shuffle } from '../../../src/arrays/operations'
 
 const numericSort = (a: number, b: number) => a - b
 

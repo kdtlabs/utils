@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { DEFAULT_STRINGIFY_FORMATTERS, stringifyError } from '@/errors/stringify'
+import { DEFAULT_STRINGIFY_FORMATTERS, stringifyError } from '../../src/errors/stringify'
 
 describe('stringifyError', () => {
     describe('basic errors', () => {

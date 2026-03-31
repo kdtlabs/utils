@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isJsonRpcBatchResponse } from '@/json-rpc/guards'
+import { isJsonRpcBatchResponse } from '../../../src/json-rpc/guards'
 
 describe('isJsonRpcBatchResponse', () => {
     it('returns true for an array of success responses', () => {

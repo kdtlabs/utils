@@ -1,5 +1,5 @@
+import type { Jsonable } from '../../core'
 import type { SerializeContext } from '../types'
-import type { Jsonable } from '@/core'
 
 export function serializeBlob(value: object, ctx: SerializeContext): Jsonable | undefined {
     if (typeof Blob === 'undefined' || !(value instanceof Blob)) {

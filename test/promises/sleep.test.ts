@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { sleep } from '@/promises'
+import { sleep } from '../../src/promises'
 
 function createPendingAbort() {
     const controller = new AbortController()

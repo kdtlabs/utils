@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { serializeOpaque } from '@/serializer/serializers/opaque'
+import { serializeOpaque } from '../../../src/serializer/serializers/opaque'
 import { createTestContext } from '../helpers'
 
 function * nums() {

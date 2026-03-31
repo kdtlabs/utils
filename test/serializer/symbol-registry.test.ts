@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createSymbolKeySerializer } from '@/serializer/symbol-registry'
+import { createSymbolKeySerializer } from '../../src/serializer/symbol-registry'
 
 describe('createSymbolKeySerializer', () => {
     it('returns a function', () => {

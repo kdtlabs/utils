@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isValidProtocol } from '@/strings/guards'
+import { isValidProtocol } from '../../../src/strings/guards'
 
 describe('isValidProtocol', () => {
     it('returns true when no protocols specified', () => {

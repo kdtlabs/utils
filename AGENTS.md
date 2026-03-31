@@ -10,7 +10,7 @@
 
 - Write or modify code → read `docs/rules/CODE_QUALITY.md` and `docs/rules/CODE_STYLE.md`
 - Add a new util/helper → also read `docs/rules/BENCHMARK_WORKFLOW.md`
-- Add a new util/helper → also update `docs/SKILL.md` to include the new function
+- Add a new util/helper → also update `SKILL.md` to include the new function
 - Extract reusable logic into a new util → also read `docs/rules/BENCHMARK_WORKFLOW.md`
 - Review, plan, or edit docs only → read this file only unless the task also changes code or rule content
 - Edit the rule system itself → read this file and only the affected rule files

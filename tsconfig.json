@@ -7,9 +7,6 @@
         "useDefineForClassFields": true,
         "module": "Preserve",
         "moduleResolution": "Bundler",
-        "paths": {
-            "@/*": ["./src/*"],
-        },
         "resolveJsonModule": true,
         "allowImportingTsExtensions": true,
         "allowJs": true,

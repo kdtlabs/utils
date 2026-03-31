@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isWebSocketUrl } from '@/strings/guards'
+import { isWebSocketUrl } from '../../../src/strings/guards'
 
 describe('isWebSocketUrl', () => {
     it('returns true for ws URL', () => {

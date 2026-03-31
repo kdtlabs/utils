@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'bun:test'
-import { getEnv } from '@/system/env'
+import { getEnv } from '../../../src/system/env'
 
 describe('getEnv', () => {
     const env: Record<string, string> = {
-        DATABASE_URL: 'postgres://localhost',
         API_KEY: 'secret',
-        APP_DATABASE_URL: 'postgres://app',
         APP_API_KEY: 'app-secret',
+        APP_DATABASE_URL: 'postgres://app',
         APP_EMPTY: '',
+        DATABASE_URL: 'postgres://localhost',
         PORT: '3000',
     }
 
@@ -15,8 +15,8 @@ describe('getEnv', () => {
         const result = getEnv(['DATABASE_URL', 'API_KEY'], { env })
 
         expect(result).toEqual({
-            DATABASE_URL: 'postgres://localhost',
             API_KEY: 'secret',
+            DATABASE_URL: 'postgres://localhost',
         })
     })
 
@@ -24,8 +24,8 @@ describe('getEnv', () => {
         const result = getEnv(['MISSING', 'ALSO_MISSING'], { env })
 
         expect(result).toEqual({
-            MISSING: undefined,
             ALSO_MISSING: undefined,
+            MISSING: undefined,
         })
     })
 
@@ -33,8 +33,8 @@ describe('getEnv', () => {
         const result = getEnv(['DATABASE_URL', 'API_KEY'], { env, prefix: 'APP_' })
 
         expect(result).toEqual({
-            DATABASE_URL: 'postgres://app',
             API_KEY: 'app-secret',
+            DATABASE_URL: 'postgres://app',
         })
     })
 
@@ -71,19 +71,19 @@ describe('getEnv', () => {
     })
 
     it('falls back to non-prefixed key when includeNonePrefix is true and prefixed key is missing', () => {
-        const result = getEnv(['PORT'], { env, prefix: 'APP_', includeNonePrefix: true })
+        const result = getEnv(['PORT'], { env, includeNonePrefix: true, prefix: 'APP_' })
 
         expect(result).toEqual({ PORT: '3000' })
     })
 
     it('prefers prefixed key over non-prefixed when includeNonePrefix is true', () => {
-        const result = getEnv(['API_KEY'], { env, prefix: 'APP_', includeNonePrefix: true })
+        const result = getEnv(['API_KEY'], { env, includeNonePrefix: true, prefix: 'APP_' })
 
         expect(result).toEqual({ API_KEY: 'app-secret' })
     })
 
     it('does not fall back to non-prefixed key when includeNonePrefix is false', () => {
-        const result = getEnv(['PORT'], { env, prefix: 'APP_', includeNonePrefix: false })
+        const result = getEnv(['PORT'], { env, includeNonePrefix: false, prefix: 'APP_' })
 
         expect(result).toEqual({ PORT: undefined })
     })

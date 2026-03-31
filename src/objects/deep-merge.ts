@@ -1,6 +1,6 @@
 import type { AnyObject, DeepPartial } from './types'
-import { isArray } from '@/arrays'
-import { unique } from '@/arrays/set-operations'
+import { isArray } from '../arrays'
+import { unique } from '../arrays/set-operations'
 import { isPlainObject } from './guards'
 
 export type DeepMergeArrayMode = 'merge' | 'merge-dedupe' | 'replace'

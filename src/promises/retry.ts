@@ -1,6 +1,6 @@
 import type { Awaitable } from './types'
-import { isAbortError } from '@/errors'
-import { clamp } from '@/numbers'
+import { isAbortError } from '../errors'
+import { clamp } from '../numbers'
 import { abortable } from './abortable'
 import { sleep } from './timers'
 

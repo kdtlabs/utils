@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { compact } from '@/arrays/conversions'
+import { compact } from '../../../src/arrays/conversions'
 
 describe('compact', () => {
     it('removes null and undefined', () => {

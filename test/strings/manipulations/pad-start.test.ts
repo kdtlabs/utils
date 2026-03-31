@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { padStart } from '@/strings/manipulations'
+import { padStart } from '../../../src/strings/manipulations'
 
 describe('padStart', () => {
     it('pads with spaces by default', () => {

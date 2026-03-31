@@ -1,4 +1,4 @@
-import { tap } from '@/functions'
+import { tap } from '../functions'
 
 export const startOfDay = (date: Date) => tap(new Date(date), (r) => {
     r.setHours(0, 0, 0, 0)

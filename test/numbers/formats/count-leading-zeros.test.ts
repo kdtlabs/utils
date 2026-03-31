@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { countLeadingZeros } from '@/numbers/formats'
+import { countLeadingZeros } from '../../../src/numbers/formats'
 
 describe('countLeadingZeros', () => {
     it('counts leading zeros', () => {

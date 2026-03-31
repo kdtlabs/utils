@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { combineSignals } from '@/errors/operations'
+import { combineSignals } from '../../../src/errors/operations'
 
 describe('combineSignals', () => {
     it('returns a non-aborted signal when called with no arguments', () => {

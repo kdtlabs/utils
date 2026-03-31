@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isGenerator } from '@/core/guards'
+import { isGenerator } from '../../../src/core/guards'
 
 function * gen() {
     yield 1

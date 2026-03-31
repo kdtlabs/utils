@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { invokes } from '@/functions/executions'
+import { invokes } from '../../../src/functions/executions'
 
 describe('invokes', () => {
     it('calls all functions in order', () => {

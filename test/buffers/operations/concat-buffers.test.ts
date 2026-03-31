@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { concatBuffers } from '@/buffers/operations'
+import { concatBuffers } from '../../../src/buffers/operations'
 
 describe('concatBuffers', () => {
     describe('multiple buffers of the same type', () => {

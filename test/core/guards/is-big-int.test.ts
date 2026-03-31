@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isBigInt } from '@/core/guards'
+import { isBigInt } from '../../../src/core/guards'
 
 describe('isBigInt', () => {
     it('returns true for a bigint', () => {

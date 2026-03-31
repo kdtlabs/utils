@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { withTimeout } from '@/promises'
+import { withTimeout } from '../../src/promises'
 
 function createDeferredPromise<T>() {
     let resolvePromise!: (value: PromiseLike<T> | T) => void

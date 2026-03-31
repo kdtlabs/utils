@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { formatDate } from '@/times/conversions'
+import { formatDate } from '../../../src/times/conversions'
 
 describe('formatDate', () => {
     const date = new Date(2026, 2, 15, 9, 5, 3, 7)

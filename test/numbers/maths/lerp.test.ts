@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { lerp } from '@/numbers/maths'
+import { lerp } from '../../../src/numbers/maths'
 
 describe('lerp', () => {
     it('returns start when t is 0', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { trimRepeated } from '@/strings/manipulations'
+import { trimRepeated } from '../../../src/strings/manipulations'
 
 describe('trimRepeated', () => {
     it('collapses consecutive duplicate single characters', () => {

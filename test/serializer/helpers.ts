@@ -1,6 +1,6 @@
-import type { Jsonable } from '@/core/types'
-import type { SerializeContext } from '@/serializer/types'
-import { createSymbolKeySerializer } from '@/serializer/symbol-registry'
+import type { Jsonable } from '../../src/core/types'
+import type { SerializeContext } from '../../src/serializer/types'
+import { createSymbolKeySerializer } from '../../src/serializer/symbol-registry'
 
 export const identitySerialize = (value: unknown): Jsonable => value as Jsonable
 

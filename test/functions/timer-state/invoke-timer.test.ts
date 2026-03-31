@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createTimerState, invokeTimer } from '@/functions/timer-state'
+import { createTimerState, invokeTimer } from '../../../src/functions/timer-state'
 
 describe('invokeTimer', () => {
     it('calls fn and stores the return value', () => {

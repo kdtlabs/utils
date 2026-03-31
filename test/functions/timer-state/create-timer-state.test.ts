@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createTimerState } from '@/functions/timer-state'
+import { createTimerState } from '../../../src/functions/timer-state'
 
 describe('createTimerState', () => {
     it('returns state with all fields undefined', () => {

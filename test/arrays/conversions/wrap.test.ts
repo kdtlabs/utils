@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { wrap } from '@/arrays/conversions'
+import { wrap } from '../../../src/arrays/conversions'
 
 describe('wrap', () => {
     it('wraps a non-array value in an array', () => {

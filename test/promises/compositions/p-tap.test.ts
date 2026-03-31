@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { pTap } from '@/promises/compositions'
+import { pTap } from '../../../src/promises/compositions'
 
 describe('pTap', () => {
     it('returns the original value', async () => {

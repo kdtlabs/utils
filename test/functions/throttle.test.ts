@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, jest } from 'bun:test'
-import { throttle } from '@/functions/throttle'
+import { throttle } from '../../src/functions/throttle'
 
 beforeEach(() => {
     jest.useFakeTimers()

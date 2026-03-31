@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { clamp } from '@/numbers/maths'
+import { clamp } from '../../../src/numbers/maths'
 
 describe('clamp', () => {
     it('returns the value when within range', () => {

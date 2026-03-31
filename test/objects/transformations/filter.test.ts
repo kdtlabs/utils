@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { filter } from '@/objects/transformations'
+import { filter } from '../../../src/objects/transformations'
 
 describe('filter', () => {
     it('filters by key', () => {

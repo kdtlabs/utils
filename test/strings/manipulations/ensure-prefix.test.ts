@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { ensurePrefix } from '@/strings/manipulations'
+import { ensurePrefix } from '../../../src/strings/manipulations'
 
 describe('ensurePrefix', () => {
     it('adds prefix when not present', () => {

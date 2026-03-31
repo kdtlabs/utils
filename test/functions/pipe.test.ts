@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { pipe } from '@/functions/pipe'
+import { pipe } from '../../src/functions/pipe'
 
 describe('pipe', () => {
     it('returns undefined when called with no arguments', () => {

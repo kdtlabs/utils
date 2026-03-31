@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { first } from '@/arrays/accessors'
+import { first } from '../../../src/arrays/accessors'
 
 describe('first', () => {
     it('returns first element', () => {

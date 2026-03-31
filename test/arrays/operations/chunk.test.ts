@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { chunk } from '@/arrays/operations'
+import { chunk } from '../../../src/arrays/operations'
 
 describe('chunk', () => {
     it('splits array into chunks of given size', () => {

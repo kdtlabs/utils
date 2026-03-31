@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { chunkStr } from '@/strings/manipulations'
+import { chunkStr } from '../../../src/strings/manipulations'
 
 describe('chunkStr', () => {
     it('chunks string into equal parts', () => {

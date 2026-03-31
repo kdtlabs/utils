@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { humanizeWithMultiplier } from '@/times/conversions'
+import { humanizeWithMultiplier } from '../../../src/times/conversions'
 
 describe('humanizeWithMultiplier', () => {
     test('converts numeric input with multiplier', () => {

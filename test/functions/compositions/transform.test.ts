@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { transform } from '@/functions/compositions'
+import { transform } from '../../../src/functions/compositions'
 
 describe('transform', () => {
     it('passes value through callback and returns the result', () => {

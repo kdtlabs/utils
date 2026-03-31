@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isPromise } from '@/promises/guards'
+import { isPromise } from '../../../src/promises/guards'
 
 describe('isPromise', () => {
     it('returns true for a resolved native Promise', () => {

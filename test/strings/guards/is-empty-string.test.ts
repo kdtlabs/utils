@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isEmptyString } from '@/strings/guards'
+import { isEmptyString } from '../../../src/strings/guards'
 
 describe('isEmptyString', () => {
     it('returns true for empty string', () => {

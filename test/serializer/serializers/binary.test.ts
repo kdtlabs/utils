@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { serializeBinary } from '@/serializer/serializers/binary'
+import { serializeBinary } from '../../../src/serializer/serializers/binary'
 import { createTestContext } from '../helpers'
 
 describe('serializeBinary', () => {

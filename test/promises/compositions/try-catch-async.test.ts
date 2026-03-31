@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { tryCatchAsync } from '@/promises/compositions'
+import { tryCatchAsync } from '../../../src/promises/compositions'
 
 describe('tryCatchAsync', () => {
     it('returns the result when fn succeeds synchronously', async () => {

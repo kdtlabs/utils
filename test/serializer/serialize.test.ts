@@ -1,8 +1,8 @@
-import type { Jsonable } from '@/core/types'
-import type { SerializeOptions } from '@/serializer/types'
+import type { Jsonable } from '../../src/core/types'
+import type { SerializeOptions } from '../../src/serializer/types'
 import { describe, expect, it } from 'bun:test'
-import { serialize } from '@/index'
-import { SERIALIZE } from '@/serializer/constants'
+import { serialize } from '../../src/index'
+import { SERIALIZE } from '../../src/serializer/constants'
 
 class CustomToJson {
     public toJSON() {

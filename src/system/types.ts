@@ -1,3 +1,3 @@
-import type { BufferLike } from '@/buffers'
+import type { BufferLike } from '../buffers'
 
 export type PathLike = BufferLike | URL | string

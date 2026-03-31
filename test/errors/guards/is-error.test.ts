@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
-import { BaseError } from '@/errors/base-error'
-import { isError } from '@/errors/guards'
+import { BaseError } from '../../../src/errors/base-error'
+import { isError } from '../../../src/errors/guards'
 
 describe('isError', () => {
     it('returns true for Error', () => {

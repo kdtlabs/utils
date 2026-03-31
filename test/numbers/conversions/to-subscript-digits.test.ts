@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { toSubscriptDigits } from '@/numbers/conversions'
+import { toSubscriptDigits } from '../../../src/numbers/conversions'
 
 describe('toSubscriptDigits', () => {
     it('converts a single digit', () => {

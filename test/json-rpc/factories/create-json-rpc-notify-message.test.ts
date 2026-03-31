@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createJsonRpcNotifyMessage } from '@/json-rpc/factories'
+import { createJsonRpcNotifyMessage } from '../../../src/json-rpc/factories'
 
 describe('createJsonRpcNotifyMessage', () => {
     it('creates a notify message without params', () => {

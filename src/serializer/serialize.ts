@@ -1,5 +1,5 @@
+import type { Jsonable } from '../core'
 import type { SerializeContext, SerializeOptions } from './types'
-import type { Jsonable } from '@/core'
 import { OMIT_SENTINEL } from './constants'
 import { createContext } from './context'
 import { serializeCompound } from './serializers/compound'

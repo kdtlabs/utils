@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { once } from '@/functions/once'
+import { once } from '../../src/functions/once'
 
 describe('once', () => {
     it('calls the function on first invocation', () => {

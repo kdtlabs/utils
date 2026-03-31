@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { entries } from '@/objects/transformations'
+import { entries } from '../../../src/objects/transformations'
 
 describe('entries', () => {
     it('returns an empty array for an empty object', () => {

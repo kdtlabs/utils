@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, jest } from 'bun:test'
-import { debounce } from '@/functions/debounce'
+import { debounce } from '../../src/functions/debounce'
 
 beforeEach(() => {
     jest.useFakeTimers()

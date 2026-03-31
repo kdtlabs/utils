@@ -1,7 +1,7 @@
-import type { UrlLike } from '@/strings'
-import { combineSignals, createAbortController } from '@/errors'
-import { resolveOptions } from '@/objects'
-import { withRetry, type WithRetryOptions } from '@/promises'
+import type { UrlLike } from '../strings'
+import { combineSignals, createAbortController } from '../errors'
+import { resolveOptions } from '../objects'
+import { withRetry, type WithRetryOptions } from '../promises'
 
 export interface FetchOptions extends Omit<RequestInit, 'signal'> {
     retry?: Omit<WithRetryOptions<Response>, 'signal'> & { enabled?: boolean } | boolean

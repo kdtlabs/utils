@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isObject } from '@/objects/guards'
+import { isObject } from '../../../src/objects/guards'
 
 describe('isObject', () => {
     it('returns true for an empty plain object', () => {

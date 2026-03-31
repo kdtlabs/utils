@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { tap } from '@/functions/compositions'
+import { tap } from '../../../src/functions/compositions'
 
 describe('tap', () => {
     it('calls callback with the value', () => {

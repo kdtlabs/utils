@@ -1,5 +1,5 @@
 import type { Fn } from './types'
-import { isNonEmptyArray } from '@/arrays'
+import { isNonEmptyArray } from '../arrays'
 
 export function pipe(): void
 export function pipe<T>(fn: () => T): T

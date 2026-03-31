@@ -1,7 +1,7 @@
-import type { Jsonable } from '@/core/types'
-import type { SerializeContext } from '@/serializer/types'
+import type { Jsonable } from '../../src/core/types'
+import type { SerializeContext } from '../../src/serializer/types'
 import { describe, expect, it } from 'bun:test'
-import { serializeError } from '@/serializer/serializers/error'
+import { serializeError } from '../../src/serializer/serializers/error'
 import { createTestContext, identitySerialize } from './helpers'
 
 describe('serializeError', () => {

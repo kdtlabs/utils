@@ -1,5 +1,5 @@
 import type { Args, Fn } from './types'
-import { normalizeError } from '@/errors'
+import { normalizeError } from '../errors'
 
 export function once<T extends Fn>(fn: T) {
     let called = false

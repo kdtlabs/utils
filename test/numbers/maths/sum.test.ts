@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { sum } from '@/numbers/maths'
+import { sum } from '../../../src/numbers/maths'
 
 describe('sum', () => {
     it('sums an array of numbers', () => {

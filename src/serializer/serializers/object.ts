@@ -1,5 +1,5 @@
+import type { Jsonable } from '../../core'
 import type { SerializeContext, SerializeValueFn } from '../types'
-import type { Jsonable } from '@/core'
 import { OMIT_SENTINEL } from '../constants'
 
 export function handlePropertyAccessError(error: unknown, strategy: SerializeContext['onPropertyAccess'], key: string | symbol, ctx: SerializeContext): Jsonable | typeof OMIT_SENTINEL {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { randomStr } from '@/strings/factories'
+import { randomStr } from '../../../src/strings/factories'
 
 describe('randomStr', () => {
     it('generates a string of default length 16', () => {

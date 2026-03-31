@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { pPipe } from '@/promises/pipe'
+import { pPipe } from '../../src/promises/pipe'
 
 describe('pPipe', () => {
     it('returns undefined when called with no arguments', async () => {

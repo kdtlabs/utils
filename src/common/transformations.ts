@@ -1,7 +1,7 @@
 import type { NullToUndefined } from './types'
-import { isArray } from '@/arrays'
-import { isNullish } from '@/core'
-import { isPlainObject, map } from '@/objects'
+import { isArray } from '../arrays'
+import { isNullish } from '../core'
+import { isPlainObject, map } from '../objects'
 
 export function nullToUndefined<T>(value: T): NullToUndefined<T> {
     if (isNullish(value)) {

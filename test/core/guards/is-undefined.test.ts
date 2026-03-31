@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isUndefined } from '@/core/guards'
+import { isUndefined } from '../../../src/core/guards'
 
 describe('isUndefined', () => {
     it('returns true for undefined', () => {

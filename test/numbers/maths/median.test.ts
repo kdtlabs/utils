@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { median } from '@/numbers/maths'
+import { median } from '../../../src/numbers/maths'
 
 describe('median', () => {
     it('returns the middle value for odd-length array', () => {

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'bun:test'
-import { isInDev, isInDevelopment } from '@/system/env'
+import { isInDev, isInDevelopment } from '../../../src/system/env'
 
 describe('isInDevelopment', () => {
     let originalEnv: string | undefined

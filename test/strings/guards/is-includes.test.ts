@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isIncludes } from '@/strings/guards'
+import { isIncludes } from '../../../src/strings/guards'
 
 describe('isIncludes', () => {
     it('defaults to "all" mode', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isDate } from '@/core/guards'
+import { isDate } from '../../../src/core/guards'
 
 describe('isDate', () => {
     it('returns true for a Date object', () => {

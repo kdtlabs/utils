@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { parseExponential } from '@/numbers/conversions'
+import { parseExponential } from '../../../src/numbers/conversions'
 
 describe('parseExponential', () => {
     it('returns non-exponential string unchanged', () => {

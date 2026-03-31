@@ -1,6 +1,6 @@
+import type { Jsonable } from '../../core'
 import type { SerializeContext, SerializeValueFn } from '../types'
-import type { Jsonable } from '@/core'
-import { isCollectionLike, isMapLike, isSetLike } from '@/collections'
+import { isCollectionLike, isMapLike, isSetLike } from '../../collections'
 import { serializeIterableEntries } from './array'
 
 export function serializeCollection(value: object, ctx: SerializeContext, serializeValue: SerializeValueFn): Jsonable | undefined {

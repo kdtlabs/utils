@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { filterByValue } from '@/objects/transformations'
+import { filterByValue } from '../../../src/objects/transformations'
 
 describe('filterByValue', () => {
     it('filters truthy values only', () => {

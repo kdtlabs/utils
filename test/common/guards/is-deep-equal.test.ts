@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isDeepEqual } from '@/common/guards'
+import { isDeepEqual } from '../../../src/common/guards'
 
 describe('isDeepEqual', () => {
     it('returns true for identical primitives', () => {

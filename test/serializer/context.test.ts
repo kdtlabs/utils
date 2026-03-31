@@ -1,6 +1,6 @@
-import type { SerializeOptions } from '@/serializer/types'
+import type { SerializeOptions } from '../../src/serializer/types'
 import { describe, expect, it } from 'bun:test'
-import { createContext, DEFAULT_REPLACER } from '@/serializer/context'
+import { createContext, DEFAULT_REPLACER } from '../../src/serializer/context'
 
 describe('createContext', () => {
     it('creates context with default options (no args)', () => {

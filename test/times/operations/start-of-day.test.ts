@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { startOfDay } from '@/times/operations'
+import { startOfDay } from '../../../src/times/operations'
 
 describe('startOfDay', () => {
     test('sets time to midnight', () => {

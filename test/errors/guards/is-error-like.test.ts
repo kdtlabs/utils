@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isErrorLike } from '@/errors/guards'
+import { isErrorLike } from '../../../src/errors/guards'
 
 describe('isErrorLike', () => {
     it('returns true for object with name string', () => {

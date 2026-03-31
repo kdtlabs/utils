@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isStringEquals } from '@/strings/guards'
+import { isStringEquals } from '../../../src/strings/guards'
 
 describe('isStringEquals', () => {
     it('returns true when all others equal str', () => {

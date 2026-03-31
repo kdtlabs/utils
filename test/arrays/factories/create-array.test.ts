@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createArray } from '@/arrays/factories'
+import { createArray } from '../../../src/arrays/factories'
 
 describe('createArray', () => {
     it('creates array of given length using value function', () => {

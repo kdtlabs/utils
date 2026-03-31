@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { trim } from '@/strings/manipulations'
+import { trim } from '../../../src/strings/manipulations'
 
 describe('trim', () => {
     it('trims both sides of whitespace by default', () => {

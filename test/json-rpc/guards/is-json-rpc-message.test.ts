@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isJsonRpcMessage } from '@/json-rpc/guards'
+import { isJsonRpcMessage } from '../../../src/json-rpc/guards'
 
 describe('isJsonRpcMessage', () => {
     it('returns true for a valid request message', () => {

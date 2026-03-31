@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { formatNumber } from '@/numbers/formats'
+import { formatNumber } from '../../../src/numbers/formats'
 
 describe('formatNumber', () => {
     describe('basic formatting', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isNonEmptyArray } from '@/arrays/guards'
+import { isNonEmptyArray } from '../../../src/arrays/guards'
 
 describe('isNonEmptyArray', () => {
     it('returns true for non-empty array', () => {

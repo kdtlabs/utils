@@ -1,6 +1,6 @@
-import type { JsonRpcResponseMessage } from '@/json-rpc/types'
+import type { JsonRpcResponseMessage } from '../../../src/json-rpc/types'
 import { describe, expect, it } from 'bun:test'
-import { isJsonRpcResponseHasNonNullableId } from '@/json-rpc/guards'
+import { isJsonRpcResponseHasNonNullableId } from '../../../src/json-rpc/guards'
 
 describe('isJsonRpcResponseHasNonNullableId', () => {
     it('returns true for a response with numeric id', () => {

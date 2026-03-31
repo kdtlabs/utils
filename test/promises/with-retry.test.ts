@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
-import { isAbortError } from '@/errors'
-import { withRetry } from '@/promises/retry'
+import { isAbortError } from '../../src/errors'
+import { withRetry } from '../../src/promises/retry'
 
 describe('withRetry', () => {
     it('returns result on first successful attempt', async () => {

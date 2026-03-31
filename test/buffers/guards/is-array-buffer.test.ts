@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isArrayBuffer } from '@/buffers/guards'
+import { isArrayBuffer } from '../../../src/buffers/guards'
 
 describe('isArrayBuffer', () => {
     it('returns true for an ArrayBuffer', () => {

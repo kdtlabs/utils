@@ -1,7 +1,7 @@
-import { isArray, isEmptyArray } from '@/arrays'
-import { isCollectionLike, isEmptyCollection } from '@/collections'
-import { isNullish, isPrimitive, isString } from '@/core'
-import { isEmptyObject, isPlainObject } from '@/objects'
+import { isArray, isEmptyArray } from '../arrays'
+import { isCollectionLike, isEmptyCollection } from '../collections'
+import { isNullish, isPrimitive, isString } from '../core'
+import { isEmptyObject, isPlainObject } from '../objects'
 
 export function isEmpty(value: unknown) {
     if (isNullish(value)) {

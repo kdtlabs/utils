@@ -1,6 +1,6 @@
+import type { Jsonable } from '../../core'
 import type { SerializeContext } from '../types'
-import type { Jsonable } from '@/core'
-import { isGenerator } from '@/core'
+import { isGenerator } from '../../core'
 import { serializeFunction } from './function'
 
 export function serializeOpaque(value: unknown, ctx: SerializeContext): Jsonable | undefined {

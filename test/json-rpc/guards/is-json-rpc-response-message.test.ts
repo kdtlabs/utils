@@ -1,6 +1,6 @@
-import type { JsonRpcMessage } from '@/json-rpc/types'
+import type { JsonRpcMessage } from '../../../src/json-rpc/types'
 import { describe, expect, it } from 'bun:test'
-import { isJsonRpcResponseMessage } from '@/json-rpc/guards'
+import { isJsonRpcResponseMessage } from '../../../src/json-rpc/guards'
 
 describe('isJsonRpcResponseMessage', () => {
     it('returns true for a success response', () => {

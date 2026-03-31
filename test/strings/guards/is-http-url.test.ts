@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isHttpUrl } from '@/strings/guards'
+import { isHttpUrl } from '../../../src/strings/guards'
 
 describe('isHttpUrl', () => {
     it('returns true for http URL', () => {

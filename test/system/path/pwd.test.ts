@@ -1,7 +1,7 @@
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'bun:test'
-import { pwd } from '@/system/path'
+import { pwd } from '../../../src/system/path'
 
 const thisDir = dirname(fileURLToPath(import.meta.url))
 

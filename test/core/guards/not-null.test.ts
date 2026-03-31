@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { notNull } from '@/core/guards'
+import { notNull } from '../../../src/core/guards'
 
 describe('notNull', () => {
     it('returns false for null', () => {

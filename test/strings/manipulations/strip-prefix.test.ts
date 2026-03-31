@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { stripPrefix } from '@/strings/manipulations'
+import { stripPrefix } from '../../../src/strings/manipulations'
 
 describe('stripPrefix', () => {
     it('removes prefix when present', () => {

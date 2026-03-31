@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { merge } from '@/arrays/operations'
+import { merge } from '../../../src/arrays/operations'
 
 describe('merge', () => {
     it('merges multiple arrays', () => {

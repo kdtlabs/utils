@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { stripSuffix } from '@/strings/manipulations'
+import { stripSuffix } from '../../../src/strings/manipulations'
 
 describe('stripSuffix', () => {
     it('removes suffix when present', () => {

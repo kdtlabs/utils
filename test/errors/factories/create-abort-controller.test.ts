@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createAbortController } from '@/errors/factories'
+import { createAbortController } from '../../../src/errors/factories'
 
 describe('createAbortController', () => {
     it('returns an AbortController without timeout', () => {

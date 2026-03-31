@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { toPercent } from '@/numbers/conversions'
+import { toPercent } from '../../../src/numbers/conversions'
 
 describe('toPercent', () => {
     it('calculates a basic percentage', () => {

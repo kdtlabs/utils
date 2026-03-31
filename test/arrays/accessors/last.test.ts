@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { last } from '@/arrays/accessors'
+import { last } from '../../../src/arrays/accessors'
 
 describe('last', () => {
     it('returns last element', () => {

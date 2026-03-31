@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isIncludesAny } from '@/strings/guards'
+import { isIncludesAny } from '../../../src/strings/guards'
 
 describe('isIncludesAny', () => {
     it('returns true when at least one search term is included', () => {

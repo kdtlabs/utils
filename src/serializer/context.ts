@@ -1,5 +1,5 @@
+import type { Jsonable } from '../core'
 import type { SerializeContext, SerializedValue, SerializeErrorStrategy, SerializeOptions } from './types'
-import type { Jsonable } from '@/core'
 import { createSymbolKeySerializer } from './symbol-registry'
 
 export const DEFAULT_REPLACER = (value: Omit<SerializedValue, '__serialized__'>): Jsonable => ({ ...value, __serialized__: true }) as Jsonable

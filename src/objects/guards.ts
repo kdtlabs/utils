@@ -1,6 +1,6 @@
 import type { AnyObject, UnknownObject } from './types'
-import { isArray } from '@/arrays'
-import { toString } from '@/core'
+import { isArray } from '../arrays'
+import { toString } from '../core'
 
 export const isObject = (value: unknown): value is AnyObject => value !== null && typeof value === 'object' && !isArray(value)
 

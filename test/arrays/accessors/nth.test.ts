@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { nth } from '@/arrays/accessors'
+import { nth } from '../../../src/arrays/accessors'
 
 describe('nth', () => {
     it('returns element at positive index', () => {

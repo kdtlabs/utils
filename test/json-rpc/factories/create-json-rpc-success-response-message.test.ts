@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { createJsonRpcSuccessResponseMessage } from '@/json-rpc/factories'
+import { createJsonRpcSuccessResponseMessage } from '../../../src/json-rpc/factories'
 
 describe('createJsonRpcSuccessResponseMessage', () => {
     it('creates a success response with numeric id', () => {

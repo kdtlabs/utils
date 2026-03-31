@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { unique } from '@/arrays/set-operations'
+import { unique } from '../../../src/arrays/set-operations'
 
 describe('unique', () => {
     it('removes duplicate numbers', () => {

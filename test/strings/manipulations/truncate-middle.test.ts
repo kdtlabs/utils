@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { truncateMiddle } from '@/strings/manipulations'
+import { truncateMiddle } from '../../../src/strings/manipulations'
 
 describe('truncateMiddle', () => {
     it('returns the original string when shorter than maxLength', () => {

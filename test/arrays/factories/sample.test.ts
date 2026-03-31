@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { sample } from '@/arrays/factories'
+import { sample } from '../../../src/arrays/factories'
 
 describe('sample', () => {
     it('returns 1 element by default', () => {

@@ -1,5 +1,5 @@
+import type { Nullish } from '../core'
 import type { Fn } from './types'
-import type { Nullish } from '@/core'
 
 export const noop = () => void 0
 

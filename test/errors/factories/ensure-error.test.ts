@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { ensureError } from '@/errors/factories'
+import { ensureError } from '../../../src/errors/factories'
 
 describe('ensureError', () => {
     it('wraps a string into Error', () => {

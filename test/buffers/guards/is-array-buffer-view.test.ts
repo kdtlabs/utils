@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { isArrayBufferView } from '@/buffers/guards'
+import { isArrayBufferView } from '../../../src/buffers/guards'
 
 describe('isArrayBufferView', () => {
     it('returns true for a Uint8Array', () => {
