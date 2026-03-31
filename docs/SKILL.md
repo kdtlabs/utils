@@ -1,0 +1,251 @@
+---
+name: kdtlabs-utils
+description: >
+  Provides 150+ TypeScript utility functions across 15 modules (arrays, objects, strings, numbers, promises, errors, etc.).
+  MUST check this library before writing any utility function. Do NOT reimplement functions that already exist here.
+  Use when writing TypeScript code that involves common operations like array manipulation, object transformation,
+  string processing, async control flow, error handling, or type guards.
+---
+
+# @kdtlabs/utils
+
+A comprehensive TypeScript utility library. Before writing any utility function, check if it already exists here.
+
+## Import
+
+```ts
+// Barrel import (all utils)
+import { unique, debounce, deepMerge } from '@kdtlabs/utils'
+
+// Per-module import (tree-shakeable)
+import { unique } from '@kdtlabs/utils/arrays'
+import { debounce } from '@kdtlabs/utils/functions'
+import { deepMerge } from '@kdtlabs/utils/objects'
+```
+
+## When you need function details
+
+For full type signatures, overloads, and options interfaces, read the `.d.ts` files directly:
+
+```text
+node_modules/@kdtlabs/utils/<module>/index.d.ts
+node_modules/@kdtlabs/utils/<module>/<file>.d.ts
+```
+
+## Arrays
+
+- `first<T>(array: T[]): T | undefined` — Get first element
+- `last<T>(array: T[]): T | undefined` — Get last element
+- `nth<T>(array: T[], index: number): T | undefined` — Get element at index (supports negative)
+- `unique<T>(array: T[]): T[]` — Remove duplicates via Set
+- `uniqueBy<T>(array: T[], equalFn): T[]` — Remove duplicates via custom equality
+- `groupBy<T, K>(array: T[], keyFn): Map<K, T[]>` — Group items by key
+- `keyBy<T, K>(array: T[], keyFn): Map<K, T>` — Create map keyed by function result
+- `chunk<T>(array: T[], size: number): T[][]` — Split into fixed-size chunks
+- `sortBy<T>(array: T[], ...keys): T[]` — Sort by key(s) with direction
+- `partition<T>(array: T[], predicate): [T[], T[]]` — Split into pass/fail arrays
+- `compact<T>(array: T[]): NonNullable<T>[]` — Remove null/undefined values
+- `wrap<T>(value: T | T[]): T[]` — Wrap non-array value into array
+- `toArray<T>(value): T[]` — Convert iterable/value to array
+- `range(from, to, step): number[]` — Create numeric range
+- `createArray<T>(length, valueFn): T[]` — Create array with factory function
+- `sample<T>(array: T[], quantity): T[]` — Random sampling
+
+Also: merge, flatten, shuffle, intersection, diff, symmetricDiff
+
+**Type guards:** isArray, isEmptyArray, isNonEmptyArray
+
+**Types:** MaybeArray, EmptyArray, NonEmptyArray, ElementOf, Head, Tail, Last, Flatten, TupleToUnion, FixedLength
+
+## Objects
+
+- `deepMerge<T>(base: T, override: DeepPartial<T>, options?): T` — Recursive deep merge with array mode control
+- `pick<T, K>(obj: T, ...keys: K[]): Pick<T, K>` — Pick keys to new object
+- `omit<T, K>(obj: T, ...keys: K[]): Omit<T, K>` — Omit keys from object
+- `filter(obj, predicate)` — Filter object entries
+- `filterByValue(obj, predicate)` — Filter by value only
+- `map(obj, fn)` — Map object entries
+- `entries(obj)` — Typed Object.entries
+- `resolveOptions(options, defaultValue)` — Merge options with defaults
+
+**Type guards:** isObject, isPlainObject, isEmptyObject, isKeyOf, isKeysOf
+
+**Types:** PartialBy, RequiredBy, Mutable, DeepPartial, DeepReadonly, KeysOfType, StringKeys, Dictionary, Constructor, AnyObject, UnknownObject
+
+## Functions
+
+- `debounce<T>(fn: T, wait: number): Debounced<T>` — Debounce with cancel/flush/pending
+- `throttle<T>(fn: T, wait: number): Throttled<T>` — Throttle with cancel/flush/pending
+- `memoize<T>(fn: T, options?): T` — Memoization with configurable cache
+- `pipe(...fns)` — Sequential function composition (up to 20 overloads)
+- `once<T>(fn: T): T & { reset(): void }` — Run once, with reset capability
+- `tap<T>(value: T, callback: (v: T) => void): T` — Side-effect, return original value
+- `transform<T, R>(value: T, callback: (v: T) => R): R` — Transform value
+- `tryCatch<T, F>(fn: () => T, fallback: F): T | F` — Try/catch wrapper
+
+Also: noop, invoke, invokes
+
+**Type guard:** isFunction
+
+**Types:** Fn, Args, TimingControlled
+
+## Promises
+
+- `withRetry<T>(fn, options?): Promise<T>` — Retry with exponential backoff, jitter, custom conditions
+- `withTimeout<T>(promise, ms, options?): Promise<T>` — Timeout wrapper
+- `poll<T>(fn, options): Promise<T>` — Repeated polling with interval and condition
+- `sleep(ms, options?): Promise<void>` — Delay with abort support
+- `abortable<T>(promise, signal, error?): Promise<T>` — Make promise abortable
+- `createDeferred<T>(options?): DeferredPromise<T>` — Deferred promise factory with resolve/reject
+- `createDeferredWithTimeout<T>(ms, options?): DeferredPromise<T>` — Deferred with auto-timeout
+- `pPipe(...fns)` — Async pipe composition
+- `pTap(callback)` — Async tap for promise chains
+- `tryCatchAsync<T, F>(fn, fallback): Promise<T | F>` — Async try/catch wrapper
+- `getRetryDelay(attempts, options)` — Calculate retry delay with backoff
+
+**Type guards:** isPromiseLike, isPromise
+
+**Types:** Awaitable
+
+## Errors
+
+- `BaseError` — Extended Error class with code, timestamp, retryable, cause chain
+- `normalizeError(error, options?)` — Normalize unknown value to Error instance
+- `ensureError(input, ctor?)` — Ensure value is Error, wrap if not
+- `stringifyError(error, options?)` — Human-readable error string with cause chain
+- `createAbortError(message?, name?)` — Create DOMException abort error
+- `createTimeoutError(message?, name?)` — Create timeout error
+- `createAbortController(timeout?, timeoutError?)` — AbortController with auto-timeout
+- `fromErrorLike(errorLike, ctor?)` — Create Error from error-like object
+- `combineSignals(...signals)` — Combine multiple AbortSignals into one
+
+**Type guards:** isError, isBaseError, isAbortError, isErrorLike
+
+**Types:** BaseErrorOptions, BaseErrorCode, Errorable, ErrorCtor, ErrorLike
+
+## Strings
+
+- `truncate(str, maxLength, omission?)` — Truncate with suffix (default "...")
+- `truncateMiddle(str, maxLength, omission?)` — Truncate from middle
+- `capitalize(str)` — Capitalize first character
+- `randomStr(length, characters?)` — Random string generator
+- `escapeRegExp(input)` — Escape regex special characters
+- `ensurePrefix(str, prefix)` — Add prefix if missing
+- `ensureSuffix(str, suffix)` — Add suffix if missing
+- `stripPrefix(str, prefix)` — Remove prefix
+- `stripSuffix(str, suffix)` — Remove suffix
+- `padZeroStart(num, targetLength)` — Zero-pad number
+
+Also: padStart, chunkStr, ltrim, rtrim, trim, trimRepeated
+
+**Type guards:** isEmptyString, isValidUrl, isHttpUrl, isWebSocketUrl, isValidProtocol, isStringEquals, isStringEqualsIgnoreCase, isIncludesAll, isIncludesAny, isIncludes, isHexString, isStrictHexString
+
+**Types:** UrlLike, HexString
+
+## Numbers
+
+- `clamp(value, min, max)` — Clamp value to range
+- `roundTo(value, decimals)` — Round to N decimal places
+- `lerp(start, end, t)` — Linear interpolation
+- `random(min, max)` — Random integer in range
+- `formatNumber(input, options?)` — Locale-aware number formatting
+- `toOrdinal(n)` — Convert to ordinal string (1st, 2nd, 3rd...)
+- `toPercent(value, total, decimals?)` — Calculate percentage
+
+Also: sum, avg, median, countLeadingZeros, toSubscriptDigits, parseExponential, BigIntMath
+
+**Type guards:** isNumberString, isNumberish, isPercentage, isValidRange, isInRange
+
+**Types:** NumberString, Numberish, Percentage
+
+## Core
+
+- `isNull(value)` / `isUndefined(value)` / `isNullish(value)` — Nullish checks
+- `notNull(value)` / `notUndefined(value)` / `notNullish(value)` — Non-null type guards
+- `isTrueLike(value, options?)` — Check truthy-like values (configurable true strings)
+
+Also: isBoolean, isSymbol, isBigInt, isNumber, isString, isDate, isPrimitive, isJsonablePrimitive, isGenerator, toString, typeOf
+
+**Types:** Primitive, Optional, Nullable, Nullish, Jsonable, JsonablePrimitive
+
+## Common
+
+- `isEmpty(value)` — Universal empty check (arrays, objects, collections, strings, maps, sets)
+- `assert(condition, message?, ctor?)` — Assert condition or throw (default Error)
+- `assertParam(condition, message?, ctor?)` — Assert parameter (default TypeError)
+
+## Collections
+
+- `LruMap<K, V>` — LRU eviction map with max size
+- `LruSet<T>` — LRU eviction set with max size
+- `FifoMap<K, V>` — FIFO eviction map with max size
+- `FifoSet<T>` — FIFO eviction set with max size
+
+**Type guards:** isIterable, isCollectionLike, isEmptyCollection, isSetLike, isMapLike
+
+**Types:** CollectionLike, SetLike, MapLike
+
+## Events
+
+- `Emitter<TEventMap>` — Typed event emitter with on, once, off, emit, removeAllListeners, listeners, listenersCount, eventNames
+
+**Types:** EventMap, EventNames, EventArgs, EventListener
+
+## Buffers
+
+- `bufferToString(buffer, encoding?)` — Convert buffer to string
+- `toUint8Array(buffer)` — Normalize any buffer to Uint8Array
+- `concatBuffers(buffers)` — Concatenate multiple buffers
+- `bufferEquals(a, b)` — Deep buffer comparison
+
+**Type guards:** isBuffer, isArrayBuffer, isSharedArrayBuffer, isArrayBufferView, isBufferLike
+
+**Types:** BufferLike
+
+## Times
+
+- `formatDate(date, format)` — Format date with token patterns
+- `humanizeMilliseconds(ms)` — Human-readable duration from ms
+- `humanizeSeconds(s)` — Human-readable duration from seconds
+- `humanizeNanoseconds(ns)` — Human-readable duration from ns
+- `timestamp()` — Current Unix timestamp (seconds)
+- `toUnixTimestamp(date)` — Date to Unix timestamp
+- `fromUnixTimestamp(timestamp)` — Unix timestamp to Date
+
+Also: isValidDate, startOfDay, endOfDay
+
+**Constants:** MS_PER_SECOND, MS_PER_MINUTE, MS_PER_HOUR, MS_PER_DAY, MS_PER_MONTH, MS_PER_YEAR
+
+## System
+
+- `fetch(request, options?)` — Fetch with built-in retry support
+- `pwd(importMeta, ...path)` — Resolve path relative to current module
+- `pathToString(path)` — Convert PathLike to string
+- `gracefulExit(exitCode?, maxWaitTime?)` — Graceful shutdown with exit handlers
+- `addExitHandler(handler, maxWaitTime?)` — Register exit handler
+
+Also: isInDevelopment, isInProduction, isInStaging, isInMode, isInDev, isInProd, isInStage
+
+**Types:** PathLike, FetchOptions
+
+## Serializer
+
+- `serialize(value, options?)` — Deep serialization of any value to JSON-safe format
+- `createContext(options?)` — Create serialization context for custom serialization
+- `createSymbolKeySerializer()` — Serialize Symbol keys to strings
+
+Handles: primitives, arrays, objects, errors, functions, binary data, blobs, collections, dates, regexps, URLs, circular references.
+
+## JSON-RPC
+
+- `createJsonRpcRequestMessage(id, method, params?)` — Create JSON-RPC 2.0 request
+- `createJsonRpcNotifyMessage(method, params?)` — Create notification (no id)
+- `createJsonRpcSuccessResponseMessage(id, result)` — Create success response
+- `createJsonRpcErrorResponseMessage(id, error)` — Create error response
+- `createJsonRpcErrorObject(code, message, data?)` — Create error object
+
+**Type guards:** isJsonRpcMessage, isJsonRpcRequestMessage, isJsonRpcNotifyMessage, isJsonRpcResponseMessage, isJsonRpcSuccessResponseMessage, isJsonRpcErrorResponseMessage, isJsonRpcError, isJsonRpcBatchRequest, isJsonRpcBatchResponse, isValidJsonRpcId
+
+**Constants:** JsonRpcErrorCode enum
+
+**Types:** JsonRpcRequestMessage, JsonRpcNotifyMessage, JsonRpcResponseMessage, JsonRpcSuccessResponseMessage, JsonRpcErrorResponseMessage, JsonRpcMessage, JsonRpcBatchRequest, JsonRpcBatchResponse

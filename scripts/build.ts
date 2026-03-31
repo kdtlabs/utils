@@ -75,6 +75,13 @@ for (const file of ['README.md', 'LICENSE', 'LICENSE.md', 'CHANGELOG.md']) {
     }
 }
 
+const skillMd = join(rootPath, 'docs', 'SKILL.md')
+
+if (await Bun.file(skillMd).exists()) {
+    console.log('   📋 SKILL.md')
+    await cp(skillMd, join(distPath, 'SKILL.md'))
+}
+
 if (result.logs.length > 0) {
     console.warn(`⚠️  Build completed with ${result.logs.length} warning(s):`)
 
