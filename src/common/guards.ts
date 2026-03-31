@@ -30,3 +30,29 @@ export function isEmpty(value: unknown) {
 
     return false
 }
+
+export function isDeepEqual(a: unknown, b: unknown): boolean {
+    if (a === b) {
+        return true
+    }
+
+    if (isArray(a) && isArray(b)) {
+        if (a.length !== b.length) {
+            return false
+        }
+
+        return a.every((item, i) => isDeepEqual(item, b[i]))
+    }
+
+    if (isPlainObject(a) && isPlainObject(b)) {
+        const keysA = Object.keys(a)
+
+        if (keysA.length !== Object.keys(b).length) {
+            return false
+        }
+
+        return keysA.every((key) => isDeepEqual(a[key], b[key]))
+    }
+
+    return Object.is(a, b)
+}
