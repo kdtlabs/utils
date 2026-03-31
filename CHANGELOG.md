@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.3...v0.0.4)
+
+### 🚀 Enhancements
+
+- **common:** Add nullToUndefined util and NullToUndefined type ([fe1f046](https://github.com/kdtlabs/utils/commit/fe1f046))
+- **system:** Implement getEnv with prefix and includeNonePrefix fallback ([15d6da7](https://github.com/kdtlabs/utils/commit/15d6da7))
+- **common:** Add isDeepEqual guard ([e79ac3d](https://github.com/kdtlabs/utils/commit/e79ac3d))
+
+### 💅 Refactors
+
+- **core:** Move toString and typeOf to core/conversions ([7f2bfa8](https://github.com/kdtlabs/utils/commit/7f2bfa8))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.2...v0.0.3)
