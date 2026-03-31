@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.1...v0.0.2)
+
+### 🩹 Fixes
+
+- **release:** Build after changelog gen to prevent package.json version error ([459f06c](https://github.com/kdtlabs/utils/commit/459f06c))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.1
 
 
