@@ -2,7 +2,7 @@ import kdt from '@kdtlabs/eslint-config'
 
 export default kdt({}, [
     {
-        ignores: ['.gitnexus/**', 'docs/superpowers/**', 'bench/**'],
+        ignores: ['.gitnexus/**', 'docs/superpowers/**', 'bench/**', 'CHANGELOG.md'],
     },
     {
         rules: {
