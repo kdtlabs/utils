@@ -1,0 +1,10 @@
+export const isInMode = (key: string) => process.env.NODE_ENV === key
+
+export const isInDevelopment = () => isInMode('development') || isInMode('dev')
+export const isInDev = isInDevelopment
+
+export const isInProduction = () => isInMode('production') || isInMode('prod')
+export const isInProd = isInProduction
+
+export const isInStaging = () => isInMode('staging') || isInMode('stage')
+export const isInStage = isInStaging
