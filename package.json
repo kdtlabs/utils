@@ -56,7 +56,7 @@
     },
     "simple-git-hooks": {
         "commit-msg": "bunx --no -- commitlint --edit ${1}",
-        "pre-commit": "bunx lint-staged"
+        "pre-commit": "bunx lint-staged && bun run typecheck"
     },
     "lint-staged": {
         "*": "bun run lint:fix"
