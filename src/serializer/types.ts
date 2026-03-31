@@ -1,5 +1,5 @@
 import type { OMIT_SENTINEL } from './constants'
-import type { Jsonable } from '@/core/types'
+import type { Jsonable } from '@/core'
 
 export interface SerializedValue {
     __serialized__: true

@@ -1,5 +1,5 @@
 import type { SerializeContext } from '../types'
-import type { Jsonable } from '@/core/types'
+import type { Jsonable } from '@/core'
 
 export function serializeBinary(value: object, ctx: SerializeContext): Jsonable | undefined {
     if (ArrayBuffer.isView(value) && !(value instanceof DataView)) {

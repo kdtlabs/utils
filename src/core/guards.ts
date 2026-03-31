@@ -1,16 +1,6 @@
 import type { JsonablePrimitive, Primitive } from './types'
 import { DEFAULT_TRUE_STRINGS } from './constants'
 
-export const toString = (value: unknown) => Object.prototype.toString.call(value)
-
-export function typeOf(value: unknown): string {
-    if (value === null) {
-        return 'null'
-    }
-
-    return typeof value === 'object' || typeof value === 'function' ? toString(value).slice(8, -1).toLowerCase() : typeof value
-}
-
 export const isNull = (value: unknown): value is null => value === null
 export const isUndefined = (value: unknown): value is undefined => value === undefined
 export const isNullish = (value: unknown): value is null | undefined => isNull(value) || isUndefined(value)

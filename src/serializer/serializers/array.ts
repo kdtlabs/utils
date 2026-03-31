@@ -1,5 +1,5 @@
 import type { SerializeContext, SerializeValueFn } from '../types'
-import type { Jsonable } from '@/core/types'
+import type { Jsonable } from '@/core'
 import { OMIT_SENTINEL } from '../constants'
 
 export function serializeArrayEntry(entry: unknown, ctx: SerializeContext, serializeValue: SerializeValueFn): Jsonable {

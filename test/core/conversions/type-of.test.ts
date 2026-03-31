@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { typeOf } from '@/core/guards'
+import { typeOf } from '@/core/conversions'
 
 describe('typeOf', () => {
     it('returns "null" for null', () => {

@@ -1,6 +1,6 @@
 import type { SerializeContext } from '../types'
-import type { Jsonable } from '@/core/types'
-import { isBigInt, isJsonablePrimitive, isNumber, isSymbol } from '@/core/guards'
+import type { Jsonable } from '@/core'
+import { isBigInt, isJsonablePrimitive, isNumber, isSymbol } from '@/core'
 import { serializeNumber } from './number'
 
 export function serializePrimitive(value: unknown, ctx: SerializeContext): Jsonable | undefined {

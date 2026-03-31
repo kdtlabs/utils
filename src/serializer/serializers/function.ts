@@ -1,5 +1,5 @@
 import type { SerializeContext } from '../types'
-import type { Jsonable } from '@/core/types'
+import type { Jsonable } from '@/core'
 import { GENERATOR_PATTERNS } from '../constants'
 
 export function serializeFunction(fn: (...args: unknown[]) => unknown, ctx: SerializeContext): Jsonable {

@@ -1,5 +1,5 @@
 import type { ErrorPropertyValue, SerializeContext, SerializeValueFn } from '../types'
-import type { Jsonable } from '@/core/types'
+import type { Jsonable } from '@/core'
 import { OMIT_SENTINEL } from '../constants'
 import { handlePropertyAccessError } from './object'
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test'
-import { toString } from '@/core/guards'
+import { toString } from '@/core/conversions'
 
 describe('toString', () => {
     it('returns [object Null] for null', () => {
