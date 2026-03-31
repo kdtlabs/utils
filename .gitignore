@@ -20,5 +20,6 @@ Thumbs.db
 .claude
 
 # Docs (generated)
+.gitnexus
 docs/superpowers
 docs/research

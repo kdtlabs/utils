@@ -2,13 +2,7 @@ import kdt from '@kdtlabs/eslint-config'
 
 export default kdt({}, [
     {
-        ignores: ['docs/superpowers/**', 'bench/**'],
-    },
-    {
-        rules: {
-            'no-promise-executor-return': 'off',
-            'security/detect-non-literal-regexp': 'off',
-        },
+        ignores: ['.gitnexus/**', 'docs/superpowers/**', 'bench/**'],
     },
     {
         files: ['src/system/graceful-exit.ts'],
