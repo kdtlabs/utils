@@ -21,6 +21,9 @@ if (status.trim().length > 0) {
 console.log('📋 Generating changelog and bumping version...')
 await $`bunx changelogen --clean --release --no-commit --no-tag --no-github --output CHANGELOG.md`
 
+console.log('📦 Building package...')
+await $`bun run build`
+
 console.log('🔧 Running format and lint fix...')
 await $`bun run lint:fix package.json`
 

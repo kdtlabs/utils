@@ -28,7 +28,7 @@
     },
     "scripts": {
         "build": "rimraf dist && bun run scripts/build.ts && tsc --project tsconfig.build.json",
-        "release": "bun run build && bun run scripts/release.ts && cd dist && bun publish",
+        "release": "bun run scripts/release.ts && cd dist && bunx npm publish",
         "coverage": "bun test --coverage",
         "lint": "eslint",
         "lint:fix": "bun run lint --fix",
