@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.4...v0.0.5)
+
+### 💅 Refactors
+
+- Replace @/ path aliases with relative imports and simplify build ([ebb014c](https://github.com/kdtlabs/utils/commit/ebb014c))
+
+### 🏡 Chore
+
+- Add typecheck to pre-commit hook ([7a88db9](https://github.com/kdtlabs/utils/commit/7a88db9))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.3...v0.0.4)
