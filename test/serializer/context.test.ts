@@ -1,6 +1,6 @@
 import type { SerializeOptions } from '../../src/serializer/types'
 import { describe, expect, it } from 'bun:test'
-import { createContext, DEFAULT_REPLACER } from '../../src/serializer/context'
+import { createContext, createSharedContext, DEFAULT_REPLACER } from '../../src/serializer/context'
 
 describe('createContext', () => {
     it('creates context with default options (no args)', () => {
@@ -108,6 +108,70 @@ describe('createContext', () => {
     it('symbolRegistry is a function', () => {
         const ctx = createContext()
         expect(typeof ctx.symbolRegistry).toBe('function')
+    })
+})
+
+describe('createSharedContext', () => {
+    it('creates shared context with default options', () => {
+        const ctx = createSharedContext()
+
+        expect(ctx.maxDepth).toBe(Number.POSITIVE_INFINITY)
+        expect(ctx.onUnserializable).toBe(false)
+        expect(ctx.replacer).toBe(DEFAULT_REPLACER)
+        expect(ctx.onCircularRef).toBe('placeholder')
+        expect(ctx.onMaxDepth).toBe('placeholder')
+        expect(ctx.onPropertyAccess).toBe('placeholder')
+        expect(typeof ctx.symbolRegistry).toBe('function')
+    })
+
+    it('does not include depth or visited', () => {
+        const ctx = createSharedContext()
+
+        expect('depth' in ctx).toBe(false)
+        expect('visited' in ctx).toBe(false)
+    })
+
+    it('sets maxDepth from options', () => {
+        const ctx = createSharedContext({ maxDepth: 5 })
+        expect(ctx.maxDepth).toBe(5)
+    })
+
+    it('sets replacer from options', () => {
+        const custom = () => 'custom' as never
+        const ctx = createSharedContext({ replacer: custom })
+        expect(ctx.replacer).toBe(custom)
+    })
+
+    it('sets onUnserializable from options', () => {
+        const handler = () => 'handled' as never
+        const ctx = createSharedContext({ onUnserializable: handler })
+        expect(ctx.onUnserializable).toBe(handler)
+    })
+
+    it('onError string sets all three strategies', () => {
+        const ctx = createSharedContext({ onError: 'throw' })
+
+        expect(ctx.onCircularRef).toBe('throw')
+        expect(ctx.onMaxDepth).toBe('throw')
+        expect(ctx.onPropertyAccess).toBe('throw')
+    })
+
+    it('onError object extracts per-case strategies', () => {
+        const ctx = createSharedContext({
+            onError: { circularRef: 'throw', maxDepth: 'omit', propertyAccess: 'placeholder' },
+        })
+
+        expect(ctx.onCircularRef).toBe('throw')
+        expect(ctx.onMaxDepth).toBe('omit')
+        expect(ctx.onPropertyAccess).toBe('placeholder')
+    })
+
+    it('onError object with partial overrides defaults missing to placeholder', () => {
+        const ctx = createSharedContext({ onError: { circularRef: 'throw' } })
+
+        expect(ctx.onCircularRef).toBe('throw')
+        expect(ctx.onMaxDepth).toBe('placeholder')
+        expect(ctx.onPropertyAccess).toBe('placeholder')
     })
 })
 

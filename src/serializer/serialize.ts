@@ -1,14 +1,25 @@
 import type { Jsonable } from '../core'
-import type { SerializeContext, SerializeOptions } from './types'
+import type { SerializeContext, SerializeOptions, SharedSerializeContext } from './types'
 import { OMIT_SENTINEL } from './constants'
-import { createContext } from './context'
+import { createContext, createSharedContext } from './context'
 import { serializeCompound } from './serializers/compound'
 import { serializeLeafObject } from './serializers/leaf-object'
 import { serializePrimitive } from './serializers/primitive'
 import { handleError } from './utils'
 
-export function serialize(value: unknown, options?: SerializeOptions): Jsonable {
-    const ctx = createContext(options)
+export const createSerializerWithContext = (ctx: SharedSerializeContext) => {
+    return (value: unknown) => serializeWithContext(value, { ...ctx, depth: 0, visited: new Set() })
+}
+
+export const createSerializer = (options?: SerializeOptions) => (
+    createSerializerWithContext(createSharedContext(options))
+)
+
+export const serialize = (value: unknown, options?: SerializeOptions): Jsonable => (
+    serializeWithContext(value, createContext(options))
+)
+
+export function serializeWithContext(value: unknown, ctx: SerializeContext) {
     const serializedValue = serializeValue(value, ctx)
 
     if (serializedValue === OMIT_SENTINEL) {

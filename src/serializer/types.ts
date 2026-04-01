@@ -37,6 +37,8 @@ export interface SerializeContext {
     readonly visited: Set<object>
 }
 
+export type SharedSerializeContext = Omit<SerializeContext, 'depth' | 'visited'>
+
 export type SerializeValueFn = (value: unknown, ctx: SerializeContext) => Jsonable | typeof OMIT_SENTINEL
 
 export type ErrorPropertyValue = Jsonable | typeof OMIT_SENTINEL | undefined

@@ -3,6 +3,8 @@ import type { SerializeOptions } from '../../src/serializer/types'
 import { describe, expect, it } from 'bun:test'
 import { serialize } from '../../src/index'
 import { SERIALIZE } from '../../src/serializer/constants'
+import { createSharedContext } from '../../src/serializer/context'
+import { createSerializer, createSerializerWithContext, serializeWithContext } from '../../src/serializer/serialize'
 
 class CustomToJson {
     public toJSON() {
@@ -575,5 +577,132 @@ describe('serialize', () => {
             const result = serialize({ a: 1 }, {})
             expect(result).toEqual({ a: 1 })
         })
+    })
+})
+
+describe('serializeWithContext', () => {
+    it('serializes value using a full context', () => {
+        const ctx = { ...createSharedContext(), depth: 0, visited: new Set<object>() }
+        const result = serializeWithContext({ a: 1 }, ctx)
+        expect(result).toEqual({ a: 1 })
+    })
+
+    it('returns null when top-level value is omitted', () => {
+        const ctx = { ...createSharedContext({ maxDepth: 0, onError: 'omit' as const }), depth: 0, visited: new Set<object>() }
+        const result = serializeWithContext({ a: 1 }, ctx)
+        expect(result).toBe(null)
+    })
+})
+
+describe('createSerializer', () => {
+    it('returns a function that serializes values', () => {
+        const s = createSerializer()
+
+        expect(s({ a: 1 })).toEqual({ a: 1 })
+        expect(s(42)).toBe(42)
+        expect(s('hello')).toBe('hello')
+        expect(s(null)).toBe(null)
+    })
+
+    it('reuses config across multiple calls', () => {
+        const s = createSerializer({ maxDepth: 1 })
+
+        const r1 = s({ nested: { deep: true } }) as Record<string, unknown>
+        const r2 = s({ other: { deep: true } }) as Record<string, unknown>
+
+        expect((r1.nested as Record<string, unknown>).type).toBe('max-depth')
+        expect((r2.other as Record<string, unknown>).type).toBe('max-depth')
+    })
+
+    it('respects options passed at creation', () => {
+        const s = createSerializer({ maxDepth: 0, onError: 'throw' })
+        expect(() => s({ a: 1 })).toThrow('[Max Depth]')
+    })
+
+    it('isolates visited set between calls', () => {
+        const s = createSerializer()
+        const obj: Record<string, unknown> = { a: 1 }
+        obj.self = obj
+
+        const r1 = s(obj) as Record<string, unknown>
+        const r2 = s(obj) as Record<string, unknown>
+
+        expect((r1.self as Record<string, unknown>).type).toBe('circular-ref')
+        expect((r2.self as Record<string, unknown>).type).toBe('circular-ref')
+    })
+
+    it('isolates depth between calls', () => {
+        const s = createSerializer({ maxDepth: 2 })
+
+        const r1 = s({ a: { b: { c: 1 } } }) as Record<string, unknown>
+        const r2 = s({ x: { y: { z: 2 } } }) as Record<string, unknown>
+
+        const a = r1.a as Record<string, unknown>
+        expect((a.b as Record<string, unknown>).type).toBe('max-depth')
+
+        const x = r2.x as Record<string, unknown>
+        expect((x.y as Record<string, unknown>).type).toBe('max-depth')
+    })
+
+    it('with custom replacer', () => {
+        const s = createSerializer({ replacer: (v) => ({ ...v, custom: true }) })
+        const result = s(42n) as Record<string, unknown>
+
+        expect(result.custom).toBe(true)
+        expect(result.type).toBe('bigint')
+    })
+
+    it('with default options produces same result as serialize()', () => {
+        const s = createSerializer()
+        const values = [42, 'str', null, true, { a: 1 }, [1, 2], new Date('2026-01-01T00:00:00Z')]
+
+        for (const v of values) {
+            expect(s(v)).toEqual(serialize(v))
+        }
+    })
+})
+
+describe('createSerializerWithContext', () => {
+    it('accepts a shared context and returns a serializer function', () => {
+        const sharedCtx = createSharedContext()
+        const s = createSerializerWithContext(sharedCtx)
+
+        expect(s({ a: 1 })).toEqual({ a: 1 })
+    })
+
+    it('reuses shared context config', () => {
+        const sharedCtx = createSharedContext({ maxDepth: 1 })
+        const s = createSerializerWithContext(sharedCtx)
+
+        const r1 = s({ nested: { deep: true } }) as Record<string, unknown>
+        const r2 = s({ other: { deep: true } }) as Record<string, unknown>
+
+        expect((r1.nested as Record<string, unknown>).type).toBe('max-depth')
+        expect((r2.other as Record<string, unknown>).type).toBe('max-depth')
+    })
+
+    it('isolates visited set between calls', () => {
+        const sharedCtx = createSharedContext()
+        const s = createSerializerWithContext(sharedCtx)
+
+        const obj: Record<string, unknown> = { a: 1 }
+        obj.self = obj
+
+        const r1 = s(obj) as Record<string, unknown>
+        const r2 = s(obj) as Record<string, unknown>
+
+        expect((r1.self as Record<string, unknown>).type).toBe('circular-ref')
+        expect((r2.self as Record<string, unknown>).type).toBe('circular-ref')
+    })
+
+    it('shares symbolRegistry across calls', () => {
+        const sharedCtx = createSharedContext()
+        const s = createSerializerWithContext(sharedCtx)
+
+        const sym = Symbol('shared-test')
+        const r1 = s(sym) as Record<string, unknown>
+        const r2 = s(sym) as Record<string, unknown>
+
+        expect(r1.value).toBe(r2.value)
     })
 })
