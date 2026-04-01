@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.6...v0.0.7)
+
+### 🚀 Enhancements
+
+- **serializer:** Add shared context and reusable serializer factories ([7581551](https://github.com/kdtlabs/utils/commit/7581551))
+
+### 📖 Documentation
+
+- Update SKILL.md with new serializer factory functions ([84b1b7a](https://github.com/kdtlabs/utils/commit/84b1b7a))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.6
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.5...v0.0.6)
