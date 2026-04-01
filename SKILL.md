@@ -234,7 +234,10 @@ Also: isInDevelopment, isInProduction, isInStaging, isInMode, isInDev, isInProd,
 ## Serializer
 
 - `serialize(value, options?)` — Deep serialization of any value to JSON-safe format
-- `createContext(options?)` — Create serialization context for custom serialization
+- `createSerializer(options?)` — Create a reusable serializer function with pre-resolved config
+- `createSerializerWithContext(ctx)` — Create a reusable serializer from an existing SharedSerializeContext
+- `createSharedContext(options?)` — Create a shared readonly config (reusable across serialize calls)
+- `createContext(options?)` — Create full serialization context (shared config + per-call state)
 - `createSymbolKeySerializer()` — Serialize Symbol keys to strings
 
 Handles: primitives, arrays, objects, errors, functions, binary data, blobs, collections, dates, regexps, URLs, circular references.
