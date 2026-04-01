@@ -48,6 +48,8 @@ Each folder contains an `index.ts` barrel that re-exports everything from the mo
 - `range(from, to, step): number[]` — Create numeric range
 - `createArray<T>(length, valueFn): T[]` — Create array with factory function
 - `sample<T>(array: T[], quantity): T[]` — Random sampling
+- `asc(type?: StringSortType)` — Ascending comparator for `Array.sort()` (supports number, bigint, string)
+- `desc(type?: StringSortType)` — Descending comparator for `Array.sort()` (supports number, bigint, string)
 
 Also: merge, flatten, shuffle, intersection, diff, symmetricDiff
 
