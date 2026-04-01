@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- **strings:** Add stripAnsi, indent, and unindent utils ([adad705](https://github.com/kdtlabs/utils/commit/adad705))
+- **arrays:** Add asc and desc comparator helpers for Array.sort() ([2a7344a](https://github.com/kdtlabs/utils/commit/2a7344a))
+
+### 🏡 Chore
+
+- Update release script log message ([f90a2c8](https://github.com/kdtlabs/utils/commit/f90a2c8))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.5
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.4...v0.0.5)
