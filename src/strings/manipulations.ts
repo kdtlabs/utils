@@ -97,3 +97,49 @@ export const trim = (str: string, characters: Set<string> | string = WHITESPACE_
 export const trimRepeated = (input: string, target: string) => (
     input.replaceAll(new RegExp(`(?:${escapeRegExp(target)}){2,}`, 'g'), target)
 )
+
+export function indent(str: string, count: number, trim = false) {
+    const pad = ' '.repeat(count)
+
+    if (trim) {
+        return str.split('\n').map((line) => pad + ltrim(line)).join('\n')
+    }
+
+    return pad + str.replaceAll('\n', `\n${pad}`)
+}
+
+export function unindent(str: TemplateStringsArray | string, ...values: unknown[]) {
+    const raw = typeof str === 'string' ? str : String.raw({ raw: str }, ...values)
+    const lines = raw.split('\n')
+
+    // Trim leading/trailing empty lines via slice (immutable)
+    let head = 0
+    let tail = lines.length
+
+    while (head < tail && lines[head]!.trim() === '') {
+        head++
+    }
+
+    while (tail > head && lines[tail - 1]!.trim() === '') {
+        tail--
+    }
+
+    const trimmed = lines.slice(head, tail)
+
+    // Find minimum indent across non-empty lines
+    let minIndent = Infinity
+
+    for (const line of trimmed) {
+        if (line.trim() === '') {
+            continue
+        }
+
+        minIndent = Math.min(minIndent, /^[ \t]*/u.exec(line)![0].length)
+    }
+
+    if (minIndent === 0 || minIndent === Infinity) {
+        return trimmed.join('\n')
+    }
+
+    return trimmed.map((line) => line.slice(minIndent)).join('\n')
+}

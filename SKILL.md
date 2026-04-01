@@ -132,6 +132,9 @@ Also: noop, invoke, invokes
 - `ensureSuffix(str, suffix)` — Add suffix if missing
 - `stripPrefix(str, prefix)` — Remove prefix
 - `stripSuffix(str, suffix)` — Remove suffix
+- `stripAnsi(str)` — Remove all ANSI escape sequences
+- `indent(str, count, trim?)` — Add spaces to the beginning of every line
+- `unindent(str | TemplateStringsArray, ...values)` — Remove common leading whitespace
 - `padZeroStart(num, targetLength)` — Zero-pad number
 
 Also: padStart, chunkStr, ltrim, rtrim, trim, trimRepeated
