@@ -4,7 +4,10 @@ console.log(`📦 Bundling...`)
 
 const result = await Bun.build({
     drop: ['console', 'debugger'],
-    entrypoints: [join(resolve(import.meta.dir, '..'), 'src/index.ts')],
+    entrypoints: [
+        join(resolve(import.meta.dir, '..'), 'src/index.ts'),
+        join(resolve(import.meta.dir, '..'), 'src/zod/index.ts'),
+    ],
     env: 'disable',
     format: 'esm',
     minify: {

@@ -72,7 +72,7 @@
 
 ### Current domains under `src/`
 
-`arrays` · `buffers` · `collections` · `common` · `core` · `errors` · `events` · `functions` · `json-rpc` · `numbers` · `objects` · `promises` · `serializer` · `strings` · `system` · `times`
+`arrays` · `buffers` · `collections` · `common` · `core` · `errors` · `events` · `functions` · `json-rpc` · `numbers` · `objects` · `promises` · `serializer` · `strings` · `system` · `times` · `zod` (sub-path export: `@kdtlabs/utils/zod`)
 
 ### Where to place new files
 

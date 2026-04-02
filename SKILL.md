@@ -281,3 +281,28 @@ Handles: primitives, arrays, objects, errors, functions, binary data, blobs, col
 **Constants:** JsonRpcErrorCode enum
 
 **Types:** JsonRpcRequestMessage, JsonRpcNotifyMessage, JsonRpcResponseMessage, JsonRpcSuccessResponseMessage, JsonRpcErrorResponseMessage, JsonRpcMessage, JsonRpcBatchRequest, JsonRpcBatchResponse
+
+## Zod
+
+> Sub-path import: `import { url, hexString, ... } from '@kdtlabs/utils/zod'`
+> Requires `zod@^4.0.0` as optional peer dependency.
+
+**Schemas (refinements for `.pipe()`):**
+
+- `url(...protocols: (Protocol | Protocol[])[])` — URL with protocol restriction (autocomplete: 'http', 'ws', 'file', 'ftp', 'ssh')
+- `hexString(length?: number)` — Hex string with optional byte length
+- `strictHexString(length?: number)` — Hex string requiring `0x` prefix
+- `numberString()` — String parseable as number
+- `validDate()` — Date that is not invalid (NaN time)
+- `trueLike(options?: IsTrueLikeOptions)` — Transform unknown to boolean via truthy detection
+- `filePath()` — Path points to existing file
+- `directoryPath()` — Path points to existing directory
+- `readable()` — Path is readable
+- `writable()` — Path is writable
+- `writableDirectory()` — Path is writable directory (walks ancestors)
+
+**Constants:**
+
+- `PROTOCOL_PATTERNS` — Record of protocol name to regex pattern
+
+**Types:** Protocol
