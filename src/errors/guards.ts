@@ -10,3 +10,9 @@ export const isBaseError = (value: unknown): value is BaseError => value instanc
 export const isAbortError = (error: unknown): error is DOMException => error instanceof DOMException && error.name === 'AbortError'
 
 export const isErrorLike = (value: unknown): value is ErrorLike => isObject(value) && isKeysOf(value, 'name') && isString(value.name)
+
+export const isErrnoException = (value: unknown): value is NodeJS.ErrnoException => (
+    value instanceof Error && 'code' in value && 'errno' in value
+)
+
+export const isMissingDirectoryError = (error: NodeJS.ErrnoException) => error.code === 'ENOENT'

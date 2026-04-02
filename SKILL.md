@@ -119,7 +119,7 @@ Also: noop, invoke, invokes
 - `fromErrorLike(errorLike, ctor?)` — Create Error from error-like object
 - `combineSignals(...signals)` — Combine multiple AbortSignals into one
 
-**Type guards:** isError, isBaseError, isAbortError, isErrorLike
+**Type guards:** isError, isBaseError, isAbortError, isErrorLike, isErrnoException, isMissingDirectoryError
 
 **Types:** BaseErrorOptions, BaseErrorCode, Errorable, ErrorCtor, ErrorLike
 
@@ -234,9 +234,20 @@ Also: isValidDate
 
 ## System
 
+- `computeHash(data, algorithm, encoding?)` — Hash data with any algorithm, default hex encoding
+- `getFileHash(path, algorithm, options?)` — Sync file hash (reads entire file into memory)
+- `getLargeFileHash(path, algorithm, options?)` — Async file hash via stream (memory-efficient for large files)
+- `hasAccess(path, mode?)` — Check if path is accessible with given mode
+- `isReadable(path)` — Check if path is readable (works for both files and directories)
+- `isWritable(path)` — Check if path is writable (works for both files and directories)
+- `isFile(path)` — Check if path is a file
+- `isDirectory(path)` — Check if path is a directory
+- `isWritableDirectory(dirPath)` — Check if directory is writable (walks up to nearest existing ancestor)
+- `ensureDirectory(path, options?)` — Create directory recursively if it does not exist
 - `fetch(request, options?)` — Fetch with built-in retry support
 - `pwd(importMeta, ...path)` — Resolve path relative to current module
 - `pathToString(path)` — Convert PathLike to string
+- `resolvePath(path)` — Resolve path to absolute, expands `~/` to home directory
 - `gracefulExit(exitCode?, maxWaitTime?)` — Graceful shutdown with exit handlers
 - `addExitHandler(handler, maxWaitTime?)` — Register exit handler
 
