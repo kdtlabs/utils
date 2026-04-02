@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.7...v0.0.8)
+
+### 🚀 Enhancements
+
+- **times:** Add startOf/endOf functions, DateLike type, and resolveInterval ([c41f98f](https://github.com/kdtlabs/utils/commit/c41f98f))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.7
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.6...v0.0.7)
