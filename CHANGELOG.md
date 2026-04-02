@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.9...v0.0.10)
+
+### 🚀 Enhancements
+
+- **zod:** Add custom zod schemas module with sub-path export ([950dc08](https://github.com/kdtlabs/utils/commit/950dc08))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.9
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.8...v0.0.9)
