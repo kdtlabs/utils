@@ -214,8 +214,21 @@ Also: isBoolean, isSymbol, isBigInt, isNumber, isString, isDate, isPrimitive, is
 - `timestamp()` — Current Unix timestamp (seconds)
 - `toUnixTimestamp(date)` — Date to Unix timestamp
 - `fromUnixTimestamp(timestamp)` — Unix timestamp to Date
+- `startOfHour(date)` — Start of hour (zero minutes/seconds/ms)
+- `startOfDay(date)` — Start of day (midnight)
+- `startOfWeek(date, options?)` — Start of week (default Monday)
+- `startOfMonth(date)` — Start of month (1st at midnight)
+- `startOfYear(date)` — Start of year (Jan 1st at midnight)
+- `endOfHour(date)` — End of hour (59:59.999)
+- `endOfDay(date)` — End of day (23:59:59.999)
+- `endOfWeek(date, options?)` — End of week (default Sunday)
+- `endOfMonth(date)` — End of month (last day 23:59:59.999)
+- `endOfYear(date)` — End of year (Dec 31st 23:59:59.999)
+- `resolveInterval(interval, type?, options?)` — Resolve interval string ('hourly'|'daily'|'weekly'|'monthly'|'yearly') to Date via startOf*/endOf*
 
-Also: isValidDate, startOfDay, endOfDay
+Also: isValidDate
+
+**Types:** DateLike, DayOfWeek (enum), WeekOptions, TimeInterval, ResolveIntervalOptions
 
 **Constants:** MS_PER_SECOND, MS_PER_MINUTE, MS_PER_HOUR, MS_PER_DAY, MS_PER_MONTH, MS_PER_YEAR
 
