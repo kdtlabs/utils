@@ -225,6 +225,8 @@ Also: isBoolean, isSymbol, isBigInt, isNumber, isString, isDate, isPrimitive, is
 - `endOfMonth(date)` — End of month (last day 23:59:59.999)
 - `endOfYear(date)` — End of year (Dec 31st 23:59:59.999)
 - `resolveInterval(interval, type?, options?)` — Resolve interval string ('hourly'|'daily'|'weekly'|'monthly'|'yearly') to Date via startOf*/endOf*
+- `addInterval(interval, amount, type?, options?)` — Add N intervals to now and snap to start/end
+- `subtractInterval(interval, amount, type?, options?)` — Subtract N intervals from now and snap to start/end
 
 Also: isValidDate
 

@@ -82,3 +82,27 @@ const END_RESOLVERS: Record<TimeInterval, (date: DateLike, options: WeekOptions)
 export const resolveInterval = (interval: TimeInterval, type: 'end' | 'start' = 'start', { now = new Date(), ...weekOptions }: ResolveIntervalOptions = {}) => (
     (type === 'start' ? START_RESOLVERS : END_RESOLVERS)[interval](now, weekOptions)
 )
+
+const INTERVAL_SHIFTERS: Record<TimeInterval, (date: Date, amount: number) => void> = {
+    daily: (d, n) => d.setDate(d.getDate() + n),
+    hourly: (d, n) => d.setHours(d.getHours() + n),
+    monthly: (d, n) => d.setMonth(d.getMonth() + n),
+    weekly: (d, n) => d.setDate(d.getDate() + n * 7),
+    yearly: (d, n) => d.setFullYear(d.getFullYear() + n),
+}
+
+function shiftInterval(interval: TimeInterval, amount: number, type: 'end' | 'start' = 'start', { now = new Date(), ...weekOptions }: ResolveIntervalOptions = {}) {
+    const shifted = new Date(now)
+
+    INTERVAL_SHIFTERS[interval](shifted, amount)
+
+    return (type === 'start' ? START_RESOLVERS : END_RESOLVERS)[interval](shifted, weekOptions)
+}
+
+export const addInterval = (interval: TimeInterval, amount: number, type: 'end' | 'start' = 'start', options?: ResolveIntervalOptions) => (
+    shiftInterval(interval, amount, type, options)
+)
+
+export const subtractInterval = (interval: TimeInterval, amount: number, type: 'end' | 'start' = 'start', options?: ResolveIntervalOptions) => (
+    shiftInterval(interval, -amount, type, options)
+)
