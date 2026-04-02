@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.9
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.8...v0.0.9)
+
+### 🚀 Enhancements
+
+- **errors, system:** Add error guards, fs utils, hash utils, and resolvePath ([c376580](https://github.com/kdtlabs/utils/commit/c376580))
+- **times:** Add addInterval and subtractInterval ([c7c2a9d](https://github.com/kdtlabs/utils/commit/c7c2a9d))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.8
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.7...v0.0.8)
