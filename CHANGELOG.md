@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.11
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.10...v0.0.11)
+
+### 🚀 Enhancements
+
+- **events:** Add wildcard listener support to Emitter ([493a3cc](https://github.com/kdtlabs/utils/commit/493a3cc))
+- **errors:** Add isTimeoutError guard ([782fef1](https://github.com/kdtlabs/utils/commit/782fef1))
+
+### 🩹 Fixes
+
+- **functions, promises:** Separate generic type for fallback in tryCatch/tryCatchAsync ([3a0c7d8](https://github.com/kdtlabs/utils/commit/3a0c7d8))
+- **errors:** Skip defineValue when value is undefined ([00b59ff](https://github.com/kdtlabs/utils/commit/00b59ff))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.10
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.9...v0.0.10)
