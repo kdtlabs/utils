@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.12
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.11...v0.0.12)
+
+### 🚀 Enhancements
+
+- **objects:** Add typesafe keys and values helpers ([bc1e499](https://github.com/kdtlabs/utils/commit/bc1e499))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.11
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.10...v0.0.11)
