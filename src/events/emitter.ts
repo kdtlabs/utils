@@ -55,7 +55,13 @@ export class Emitter<TEventMap = EventMap, TStrict extends boolean = false> {
         const fromRegular = this.#emitSnapshot(regularSnapshot, args)
         const fromOnce = this.#emitSnapshot(onceSnapshot, args)
 
-        return fromRegular || fromOnce
+        if (eventName === '*') {
+            return fromRegular || fromOnce
+        }
+
+        const fromWildcard = this.#emitWildcard(eventName, args)
+
+        return fromRegular || fromOnce || fromWildcard
     }
 
     public removeAllListeners<TEventName extends EventNames<TEventMap, TStrict>>(eventName?: TEventName): this {
@@ -113,5 +119,18 @@ export class Emitter<TEventMap = EventMap, TStrict extends boolean = false> {
         }
 
         return true
+    }
+
+    #emitWildcard(eventName: PropertyKey, args: any[]) {
+        const regularSnapshot = this.#takeSnapshot(this.eventListeners.get('*'))
+        const onceSnapshot = this.#takeSnapshot(this.onceListeners.get('*'))
+
+        this.onceListeners.delete('*')
+
+        const wildcardArgs = [eventName, ...args]
+        const fromRegular = this.#emitSnapshot(regularSnapshot, wildcardArgs)
+        const fromOnce = this.#emitSnapshot(onceSnapshot, wildcardArgs)
+
+        return fromRegular || fromOnce
     }
 }

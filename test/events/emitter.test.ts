@@ -905,6 +905,268 @@ describe('Emitter', () => {
         })
     })
 
+    describe('wildcard listener', () => {
+        it('fires on every emitted event', () => {
+            const emitter = new Emitter()
+            const calls: Array<[string, ...unknown[]]> = []
+
+            emitter.on('*', (event, ...args) => {
+                calls.push([event as string, ...args])
+            })
+
+            emitter.emit('a', 1)
+            emitter.emit('b', 'hello')
+
+            expect(calls).toEqual([
+                ['a', 1],
+                ['b', 'hello'],
+            ])
+        })
+
+        it('receives eventName as first arg followed by original args', () => {
+            const emitter = new Emitter()
+            const received: unknown[] = []
+
+            emitter.on('*', (...args: unknown[]) => {
+                received.push(args)
+            })
+
+            emitter.emit('test', 1, 2, 3)
+
+            expect(received).toEqual([['test', 1, 2, 3]])
+        })
+
+        it('fires after regular listeners', () => {
+            const emitter = new Emitter()
+            const order: string[] = []
+
+            emitter.on('test', () => {
+                order.push('regular')
+            })
+
+            emitter.on('*', () => {
+                order.push('wildcard')
+            })
+
+            emitter.emit('test')
+
+            expect(order).toEqual(['regular', 'wildcard'])
+        })
+
+        it('fires after once listeners', () => {
+            const emitter = new Emitter()
+            const order: string[] = []
+
+            emitter.once('test', () => {
+                order.push('once')
+            })
+
+            emitter.on('*', () => {
+                order.push('wildcard')
+            })
+
+            emitter.emit('test')
+
+            expect(order).toEqual(['once', 'wildcard'])
+        })
+
+        it('once wildcard fires only once', () => {
+            const emitter = new Emitter()
+            let count = 0
+
+            emitter.once('*', () => {
+                count++
+            })
+
+            emitter.emit('a')
+            emitter.emit('b')
+
+            expect(count).toBe(1)
+        })
+
+        it('can be removed with off', () => {
+            const emitter = new Emitter()
+            let count = 0
+
+            const listener = () => {
+                count++
+            }
+
+            emitter.on('*', listener)
+            emitter.off('*', listener)
+            emitter.emit('test')
+
+            expect(count).toBe(0)
+        })
+
+        it('is removed by removeAllListeners()', () => {
+            const emitter = new Emitter()
+            let count = 0
+
+            emitter.on('*', () => {
+                count++
+            })
+
+            emitter.removeAllListeners()
+            emitter.emit('test')
+
+            expect(count).toBe(0)
+        })
+
+        it('is removed by removeAllListeners("*")', () => {
+            const emitter = new Emitter()
+            let count = 0
+
+            emitter.on('*', () => {
+                count++
+            })
+
+            emitter.removeAllListeners('*')
+            emitter.emit('test')
+
+            expect(count).toBe(0)
+        })
+
+        it('appears in eventNames()', () => {
+            const emitter = new Emitter()
+
+            emitter.on('*', () => {})
+
+            expect(emitter.eventNames()).toContain('*')
+        })
+
+        it('is counted by listenersCount("*")', () => {
+            const emitter = new Emitter()
+
+            emitter.on('*', () => {})
+            emitter.once('*', () => {})
+
+            expect(emitter.listenersCount('*')).toBe(2)
+        })
+
+        it('is returned by listeners("*")', () => {
+            const emitter = new Emitter()
+            const listener = () => {}
+
+            emitter.on('*', listener)
+
+            expect(emitter.listeners('*')).toEqual([listener])
+        })
+
+        it('returns true from emit when only wildcard listeners exist', () => {
+            const emitter = new Emitter()
+
+            emitter.on('*', () => {})
+
+            expect(emitter.emit('unregistered')).toBe(true)
+        })
+
+        it('fires as regular listener when emit("*") is called directly', () => {
+            const emitter = new Emitter()
+            const received: unknown[] = []
+
+            emitter.on('*', (...args: unknown[]) => {
+                received.push(args)
+            })
+
+            emitter.emit('*', 'data')
+
+            expect(received).toEqual([['data']])
+        })
+
+        it('does not fire regular event listeners when wildcard emits', () => {
+            const emitter = new Emitter()
+            let regularCalled = false
+
+            emitter.on('test', () => {
+                regularCalled = true
+            })
+
+            emitter.on('*', () => {})
+            emitter.emit('other')
+
+            expect(regularCalled).toBe(false)
+        })
+
+        it('multiple wildcard listeners all fire', () => {
+            const emitter = new Emitter()
+            const calls: number[] = []
+
+            emitter.on('*', () => {
+                calls.push(1)
+            })
+
+            emitter.on('*', () => {
+                calls.push(2)
+            })
+
+            emitter.emit('test')
+
+            expect(calls).toEqual([1, 2])
+        })
+
+        it('wildcard does not interfere with unrelated events', () => {
+            const emitter = new Emitter()
+            const calls: string[] = []
+
+            emitter.on('a', () => {
+                calls.push('a')
+            })
+
+            emitter.on('b', () => {
+                calls.push('b')
+            })
+
+            emitter.on('*', (event) => {
+                calls.push(`*:${String(event)}`)
+            })
+
+            emitter.emit('a')
+
+            expect(calls).toEqual(['a', '*:a'])
+        })
+
+        it('works with typed emitter in strict mode', () => {
+            type Events = {
+                count: [n: number]
+                greet: [name: string]
+            }
+
+            const emitter = new Emitter<Events, true>()
+            const received: unknown[] = []
+
+            emitter.on('*', (event, ...args) => {
+                received.push([event, ...args])
+            })
+
+            emitter.emit('count', 42)
+            emitter.emit('greet', 'world')
+
+            expect(received).toEqual([
+                ['count', 42],
+                ['greet', 'world'],
+            ])
+        })
+
+        it('once wildcard with once regular both fire correctly', () => {
+            const emitter = new Emitter()
+            const calls: string[] = []
+
+            emitter.once('test', () => {
+                calls.push('once-regular')
+            })
+
+            emitter.once('*', () => {
+                calls.push('once-wildcard')
+            })
+
+            emitter.emit('test')
+            emitter.emit('test')
+
+            expect(calls).toEqual(['once-regular', 'once-wildcard'])
+        })
+    })
+
     describe('subclass support', () => {
         it('can be extended', () => {
             class MyEmitter extends Emitter {
