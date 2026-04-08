@@ -1,6 +1,10 @@
 import type { AnyObject, FilterPredicate } from './types'
 import { isNullish, type Nullish } from '../core'
 
+export const keys = <O extends AnyObject>(obj: O) => Object.keys(obj) as Array<keyof O>
+
+export const values = <O extends AnyObject>(obj: O) => Object.values(obj) as Array<O[keyof O]>
+
 export const entries = <O extends AnyObject>(obj: O) => Object.entries(obj) as Array<[keyof O, O[keyof O]]>
 
 export const filter = <O extends AnyObject>(obj: O, predicate: FilterPredicate<O, keyof O>): Partial<O> => (

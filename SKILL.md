@@ -65,6 +65,8 @@ Also: merge, flatten, shuffle, intersection, diff, symmetricDiff
 - `filter(obj, predicate)` — Filter object entries
 - `filterByValue(obj, predicate)` — Filter by value only
 - `map(obj, fn)` — Map object entries
+- `keys(obj)` — Typed Object.keys
+- `values(obj)` — Typed Object.values
 - `entries(obj)` — Typed Object.entries
 - `resolveOptions(options, defaultValue)` — Merge options with defaults
 
