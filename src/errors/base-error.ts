@@ -1,3 +1,5 @@
+import { notUndefined } from '../core'
+
 export type BaseErrorCode = number | string
 
 export interface BaseErrorOptions extends ErrorOptions {
@@ -41,7 +43,9 @@ export class BaseError extends Error {
     }
 
     protected defineValue(key: string, value: unknown) {
-        Object.defineProperty(this, key, { configurable: false, enumerable: true, value, writable: false })
+        if (notUndefined(value)) {
+            Object.defineProperty(this, key, { configurable: false, enumerable: true, value, writable: false })
+        }
 
         return this
     }
