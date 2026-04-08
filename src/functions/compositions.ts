@@ -8,7 +8,7 @@ export function tap<T>(value: T, callback: (value: T) => void) {
 
 export const transform = <T, R>(value: T, callback: (value: T) => R) => callback(value)
 
-export function tryCatch<T>(fn: () => T, fallback: T | ((error: unknown) => T)) {
+export function tryCatch<T, R>(fn: () => T, fallback: R | ((error: unknown) => R)) {
     try {
         return fn()
     } catch (error) {

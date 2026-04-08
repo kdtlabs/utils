@@ -9,7 +9,7 @@ pTap.catch = (fn: (error: unknown) => Awaitable<unknown>) => async (error: unkno
     throw error
 }
 
-export async function tryCatchAsync<T>(fn: () => Awaitable<T>, fallback: (error: unknown) => Awaitable<T>) {
+export async function tryCatchAsync<T, R>(fn: () => Awaitable<T>, fallback: (error: unknown) => Awaitable<R>) {
     try {
         return await fn()
     } catch (error) {
