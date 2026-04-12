@@ -84,8 +84,12 @@ Also: merge, flatten, shuffle, intersection, diff, symmetricDiff
 - `tap<T>(value: T, callback: (v: T) => void): T` — Side-effect, return original value
 - `transform<T, R>(value: T, callback: (v: T) => R): R` — Transform value
 - `tryCatch<T, F>(fn: () => T, fallback: F): T | F` — Try/catch wrapper
+- `match<T>(condition: PropertyKey, cases): T | undefined` — Declarative switch-case replacement via object lookup, supports lazy function values
+- `matchWhen<C, T>(subject: C, cases): T | undefined` — Tuple-based pattern matching with multi-key, expression matching, and first-match-wins
 
 Also: noop, invoke, invokes
+
+**Constants:** DEFAULT (Symbol used as fallback key in match and matchWhen)
 
 **Type guard:** isFunction
 

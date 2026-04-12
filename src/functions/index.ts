@@ -1,4 +1,5 @@
 export * from './compositions'
+export * from './constants'
 export * from './debounce'
 export * from './executions'
 export * from './guards'
