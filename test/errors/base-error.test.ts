@@ -242,18 +242,17 @@ describe('BaseError', () => {
             expect(() => new BaseError('x').withValue('timestamp', new Date())).toThrow(TypeError)
         })
 
-        it('defines property even when value is undefined', () => {
+        it('skips property definition when value is undefined', () => {
             const err = new BaseError('x').withValue('foo', undefined)
             const descriptor = Object.getOwnPropertyDescriptor(err, 'foo')
 
-            expect(descriptor).toBeDefined()
-            expect(descriptor!.value).toBeUndefined()
+            expect(descriptor).toBeUndefined()
         })
 
-        it('creates own property for undefined value', () => {
+        it('does not create own property for undefined value', () => {
             const err = new BaseError('x').withValue('key', undefined)
 
-            expect(Object.hasOwn(err, 'key')).toBe(true)
+            expect(Object.hasOwn(err, 'key')).toBe(false)
         })
 
         it('allows null as a value', () => {
@@ -299,13 +298,11 @@ describe('BaseError', () => {
     })
 
     describe('cause without withValue', () => {
-        it('sets cause own property even when cause is undefined', () => {
+        it('does not set cause as own property when cause is undefined', () => {
             const err = new BaseError('x')
             const descriptor = Object.getOwnPropertyDescriptor(err, 'cause')
 
-            expect(descriptor).toBeDefined()
-            expect(descriptor?.value).toBeUndefined()
-            expect(descriptor?.writable).toBe(false)
+            expect(descriptor).toBeUndefined()
         })
 
         it('sets cause as immutable when provided', () => {
@@ -331,17 +328,17 @@ describe('BaseError', () => {
             expect(keys).toContain('retryable')
         })
 
-        it('all properties appear in keys regardless of value', () => {
+        it('only provided properties appear in keys', () => {
             const err = new BaseError('x')
             const keys = Object.keys(err)
 
             expect(keys).toContain('name')
             expect(keys).toContain('timestamp')
-            expect(keys).toContain('code')
-            expect(keys).toContain('details')
-            expect(keys).toContain('exitCode')
-            expect(keys).toContain('retryable')
-            expect(keys).toContain('cause')
+            expect(keys).not.toContain('code')
+            expect(keys).not.toContain('details')
+            expect(keys).not.toContain('exitCode')
+            expect(keys).not.toContain('retryable')
+            expect(keys).not.toContain('cause')
         })
     })
 

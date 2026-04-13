@@ -108,6 +108,8 @@ Also: noop, invoke, invokes
 - `pTap(callback)` — Async tap for promise chains
 - `tryCatchAsync<T, F>(fn, fallback): Promise<T | F>` — Async try/catch wrapper
 - `getRetryDelay(attempts, options)` — Calculate retry delay with backoff
+- `AsyncChannel<T>` — Async iterable queue with push/close/asyncIterator (single consumer, unbounded)
+- `pMemoize<T>(fn, options?): T` — Async memoize with inflight dedup, configurable rejection caching
 
 **Type guards:** isPromiseLike, isPromise
 
