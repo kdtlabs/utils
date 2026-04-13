@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.13
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.12...v0.0.13)
+
+### 🚀 Enhancements
+
+- **functions:** Add match and matchWhen for declarative pattern matching ([5c34859](https://github.com/kdtlabs/utils/commit/5c34859))
+- **promises:** Add AsyncChannel and pMemoize utils ([c884964](https://github.com/kdtlabs/utils/commit/c884964))
+
+### 🩹 Fixes
+
+- **events:** Improve type inference for EventNames and WildcardArgs ([d81026a](https://github.com/kdtlabs/utils/commit/d81026a))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.12
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.11...v0.0.12)
