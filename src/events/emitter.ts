@@ -23,8 +23,8 @@ export class Emitter<TEventMap = EventMap, TStrict extends boolean = false> {
         return (listeners?.size ?? 0) + (onceListeners?.size ?? 0)
     }
 
-    public eventNames(): Array<PropertyKey | keyof TEventMap> {
-        return [...new Set([...this.eventListeners.keys(), ...this.onceListeners.keys()])]
+    public eventNames(): Array<EventNames<TEventMap, TStrict>> {
+        return [...new Set([...this.eventListeners.keys(), ...this.onceListeners.keys()])] as Array<EventNames<TEventMap, TStrict>>
     }
 
     public on<TEventName extends EventNames<TEventMap, TStrict>>(eventName: TEventName, listener: EventListener<EventArgs<TEventMap, TEventName, TStrict>>): this {
