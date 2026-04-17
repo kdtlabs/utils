@@ -138,6 +138,7 @@ Also: noop, invoke, invokes
 - `capitalize(str)` — Capitalize first character
 - `randomStr(length, characters?)` — Random string generator
 - `escapeRegExp(input)` — Escape regex special characters
+- `createSafeRegex(source, flags?)` — Wrapper around `new RegExp` that throws if the pattern looks vulnerable to ReDoS (nested unbounded quantifiers)
 - `ensurePrefix(str, prefix)` — Add prefix if missing
 - `ensureSuffix(str, suffix)` — Add suffix if missing
 - `stripPrefix(str, prefix)` — Remove prefix
