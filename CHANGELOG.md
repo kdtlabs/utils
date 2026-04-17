@@ -1,6 +1,21 @@
 # Changelog
 
 
+## v0.0.14
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.13...v0.0.14)
+
+### 🚀 Enhancements
+
+- **times:** Add uuidV7ToDate to extract Date from UUIDv7 string ([a70ff1c](https://github.com/kdtlabs/utils/commit/a70ff1c))
+- **buffers:** Add isBinaryContent to detect binary content via NUL-byte scan ([3112663](https://github.com/kdtlabs/utils/commit/3112663))
+- **strings:** Add createSafeRegex with ReDoS nested-quantifier detection ([0eded1a](https://github.com/kdtlabs/utils/commit/0eded1a))
+- **strings:** Add replacer cascade with 6 strategies ([88f0330](https://github.com/kdtlabs/utils/commit/88f0330))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.13
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.12...v0.0.13)
