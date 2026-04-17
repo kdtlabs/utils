@@ -3,6 +3,8 @@ export * from './create-safe-regex'
 export * from './factories'
 export * from './guards'
 export * from './manipulations'
+export * from './replace-with-fallback'
+export * from './replacers'
 export * from './strip-ansi'
 
 export type * from './types'

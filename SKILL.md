@@ -150,6 +150,16 @@ Also: noop, invoke, invokes
 
 Also: padStart, chunkStr, ltrim, rtrim, trim, trimRepeated
 
+**Replacers:**
+
+- `replaceWithFallback(source, search, replacement, replacers?)` — Try replacers in order until one matches; returns `{ result, strategy }`
+- `simpleReplacer` — Exact `indexOf` match
+- `lineTrimmedReplacer` — Match lines after trimming each line
+- `trimmedBoundaryReplacer` — Trim search boundary whitespace, then `indexOf`
+- `indentationReplacer` — Strip common indent from search and source window, compare, re-indent replacement
+- `whitespaceReplacer` — Treat all whitespace as flexible `\s+` via regex
+- `escapeReplacer` — Unescape `\n \t \r \" \' \\` in search, then `indexOf`
+
 **Type guards:** isEmptyString, isValidUrl, isHttpUrl, isWebSocketUrl, isValidProtocol, isStringEquals, isStringEqualsIgnoreCase, isIncludesAll, isIncludesAny, isIncludes, isHexString, isStrictHexString
 
 **Types:** UrlLike, HexString
