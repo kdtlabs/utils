@@ -6,6 +6,38 @@ export const toUnixTimestamp = (date: Date) => Math.floor(date.getTime() / 1000)
 
 export const fromUnixTimestamp = (timestamp: number) => new Date(timestamp * 1000)
 
+export function uuidV7ToDate(uuid: string) {
+    if (uuid.length !== 36 || uuid[8] !== '-' || uuid[14] !== '7') {
+        throw new TypeError('Invalid UUIDv7')
+    }
+
+    let ms = 0
+
+    for (let i = 0; i < 13; i++) {
+        if (i === 8) {
+            continue
+        }
+
+        const code = uuid.codePointAt(i)!
+
+        let digit: number
+
+        if (code >= 48 && code <= 57) {
+            digit = code - 48
+        } else if (code >= 97 && code <= 102) {
+            digit = code - 87
+        } else if (code >= 65 && code <= 70) {
+            digit = code - 55
+        } else {
+            throw new TypeError('Invalid UUIDv7')
+        }
+
+        ms = ms * 16 + digit
+    }
+
+    return new Date(ms)
+}
+
 const FORMAT_TOKEN_REGEX = /y{4}|S{3}|MM|dd|HH|mm|ss/gu
 const pad2 = (n: number) => padZeroStart(n, 2)
 

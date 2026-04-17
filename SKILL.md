@@ -222,6 +222,7 @@ Also: isBoolean, isSymbol, isBigInt, isNumber, isString, isDate, isPrimitive, is
 - `timestamp()` — Current Unix timestamp (seconds)
 - `toUnixTimestamp(date)` — Date to Unix timestamp
 - `fromUnixTimestamp(timestamp)` — Unix timestamp to Date
+- `uuidV7ToDate(uuid)` — Extract Date from a UUIDv7 string (throws on invalid format)
 - `startOfHour(date)` — Start of hour (zero minutes/seconds/ms)
 - `startOfDay(date)` — Start of day (midnight)
 - `startOfWeek(date, options?)` — Start of week (default Monday)
