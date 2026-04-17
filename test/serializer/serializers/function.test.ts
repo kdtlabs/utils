@@ -4,7 +4,6 @@ import { createTestContext } from '../helpers'
 
 async function asyncFn() {}
 
-// eslint-disable-next-line @typescript-eslint/require-await
 async function * asyncGenFn() {
     yield 1
 }

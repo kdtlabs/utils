@@ -2,7 +2,6 @@ import type { Numberish, NumberString, Percentage } from './types'
 import { isBigInt, isNumber, isString } from '../core'
 import { SPECIAL_NUMBER_STRINGS } from './constants'
 
-// eslint-disable-next-line security/detect-unsafe-regex -- anchored regex with no backtracking risk on bounded input
 const NUMERIC_PATTERN = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/iu
 
 export const isSpecialNumberString = (value: string) => SPECIAL_NUMBER_STRINGS.has(value)

@@ -7,7 +7,6 @@ describe('pMemoize', () => {
         it('returns cached result for same args', async () => {
             let callCount = 0
 
-            // eslint-disable-next-line @typescript-eslint/require-await
             const fn = pMemoize(async (id: string) => {
                 callCount++
 
@@ -25,7 +24,6 @@ describe('pMemoize', () => {
         it('produces separate cache entries for different args', async () => {
             let callCount = 0
 
-            // eslint-disable-next-line @typescript-eslint/require-await
             const fn = pMemoize(async (id: string) => {
                 callCount++
 
@@ -72,7 +70,7 @@ describe('pMemoize', () => {
             let callCount = 0
 
             const fn = pMemoize(
-                // eslint-disable-next-line @typescript-eslint/require-await
+
                 async (a: number, b: number) => {
                     callCount++
 
@@ -97,7 +95,7 @@ describe('pMemoize', () => {
             const customCache = new Map<unknown, Promise<string>>()
 
             const fn = pMemoize(
-                // eslint-disable-next-line @typescript-eslint/require-await
+
                 async (id: string) => `user-${id}`,
                 { cache: customCache },
             )
@@ -113,7 +111,6 @@ describe('pMemoize', () => {
         it('does not cache rejection by default', async () => {
             let callCount = 0
 
-            // eslint-disable-next-line @typescript-eslint/require-await
             const fn = pMemoize(async (_key: string) => {
                 callCount++
 
@@ -139,7 +136,7 @@ describe('pMemoize', () => {
             let callCount = 0
 
             const fn = pMemoize(
-                // eslint-disable-next-line @typescript-eslint/require-await
+
                 async (_key: string) => {
                     callCount++
                     throw new Error('fail')
@@ -158,7 +155,6 @@ describe('pMemoize', () => {
 
     describe('.cache property', () => {
         it('exposes the cache on the returned function', () => {
-            // eslint-disable-next-line @typescript-eslint/require-await
             const fn = pMemoize(async () => 'value')
 
             expect(fn.cache).toBeDefined()
@@ -172,7 +168,7 @@ describe('pMemoize', () => {
     describe('this context', () => {
         it('forwards this context to original function', async () => {
             const obj = {
-                // eslint-disable-next-line @typescript-eslint/require-await
+
                 fn: pMemoize(async function (this: { prefix: string }, name: string) {
                     return `${this.prefix}-${name}`
                 }),
