@@ -25,6 +25,13 @@ export function concatBuffers(buffers: BufferLike[]) {
     return result
 }
 
+export function isBinaryContent(input: BufferLike, maxBytes = 8000) {
+    const u8 = toUint8Array(input)
+    const view = u8.byteLength > maxBytes ? u8.subarray(0, maxBytes) : u8
+
+    return view.indexOf(0) !== -1
+}
+
 export function bufferEquals(a: BufferLike, b: BufferLike) {
     if (a === b) {
         return true

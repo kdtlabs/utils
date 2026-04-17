@@ -208,6 +208,7 @@ Also: isBoolean, isSymbol, isBigInt, isNumber, isString, isDate, isPrimitive, is
 - `toUint8Array(buffer)` — Normalize any buffer to Uint8Array
 - `concatBuffers(buffers)` — Concatenate multiple buffers
 - `bufferEquals(a, b)` — Deep buffer comparison
+- `isBinaryContent(buffer, maxBytes?)` — Detect binary content by scanning for NUL byte in first N bytes (default 8000)
 
 **Type guards:** isBuffer, isArrayBuffer, isSharedArrayBuffer, isArrayBufferView, isBufferLike
 
