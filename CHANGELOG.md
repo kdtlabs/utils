@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.15
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.14...v0.0.15)
+
+### 💅 Refactors
+
+- **fetch:** Simplify timeout handling using withTimeout helper ([f5a8997](https://github.com/kdtlabs/utils/commit/f5a8997))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.14
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.13...v0.0.14)
