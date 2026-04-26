@@ -1,7 +1,7 @@
 import type { UrlLike } from '../strings'
-import { combineSignals, createAbortController } from '../errors'
+import { combineSignals } from '../errors'
 import { resolveOptions } from '../objects'
-import { withRetry, type WithRetryOptions } from '../promises'
+import { withRetry, type WithRetryOptions, withTimeout } from '../promises'
 
 export interface FetchOptions extends Omit<RequestInit, 'signal'> {
     retry?: Omit<WithRetryOptions<Response>, 'signal'> & { enabled?: boolean } | boolean
@@ -13,10 +13,7 @@ export async function fetch(request: RequestInfo | UrlLike, { retry = true, sign
     const retryOptions = { enabled: true, ...(resolveOptions(retry, {}) || { enabled: false }) }
 
     const execute = async (retrySignal?: AbortSignal) => {
-        const controller = createAbortController(timeout)
-        const fetchSignal = combineSignals(controller.signal, signal, retrySignal)
-
-        return globalThis.fetch(request, { ...options, signal: fetchSignal }).finally(() => controller.abort())
+        return withTimeout(globalThis.fetch(request, { ...options, signal: combineSignals(signal, retrySignal) }), timeout)
     }
 
     return retryOptions.enabled ? await withRetry(execute, { ...retryOptions, signal }) : await execute()
