@@ -1,6 +1,8 @@
 import { isUndefined } from '../core'
 
-export const isInMode = (key: string) => process.env.NODE_ENV === key
+const NODE_ENV_KEY = 'NODE_ENV'
+
+export const isInMode = (key: string) => process.env[NODE_ENV_KEY] === key
 
 export const isInDevelopment = () => isInMode('development') || isInMode('dev')
 export const isInDev = isInDevelopment
