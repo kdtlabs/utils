@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.16
+
+[compare changes](https://github.com/kdtlabs/utils/compare/v0.0.15...v0.0.16)
+
+### 🩹 Fixes
+
+- **system:** Prevent isInMode from being constant-folded at build time ([423a2e4](https://github.com/kdtlabs/utils/commit/423a2e4))
+
+### ❤️ Contributors
+
+- Diep Dang <kdt310722@gmail.com>
+
 ## v0.0.15
 
 [compare changes](https://github.com/kdtlabs/utils/compare/v0.0.14...v0.0.15)
